@@ -15,6 +15,7 @@ class FontSize(Enum):
     DEFAULT = "1em"
     BIG = "1.2em"
     BIGGEST = "1.5em"
+    TITLE = "2em"
 
 
 button_menu_style = dict(
@@ -35,16 +36,23 @@ button_menu_style = dict(
 )
 
 sidebar_style = dict(
-    position="fixed",
+    position="sticky",
     height="100%",
+    width="100%",
     left="0px",
-    top="0px",
     z_index="5",
-    padding_x=Size.DEFAULT.value,
+    padding_x=Size.SMALLEST.value,
     padding_y=Size.DEFAULT.value,
     background_color=Color.BG_TERCERARY.value,
     border_right=f"{Size.SMALLEST.value} solid {Color.GRADIENT.value}",
-    width="15em",
+   
+)
+
+footer_style = dict(
+    width="100%",
+    height="100%",
+    background_color=Color.GRADIENT.value,
+    padding_y=Size.SMALLEST.value,
 )
 
 # Styles
@@ -60,5 +68,16 @@ BASE_STYLE = {
     },
     rx.stack: {
         "align_items": "center"
+    },
+    rx.text: {
+        "font_size": FontSize.SMALL.value,
+        "color": Color.TEXT_SECONDARY.value,
+    },
+    rx.heading: {
+        "font_size":FontSize.TITLE.value,
+        "margin_bottom":Size.DEFAULT.value,
+        "color":Color.TEXT_SECONDARY.value,
+        "text_shadow":f"4px 4px 4px {Color.BG_SECONDARY.value}",
+        "text_align":"center"
     }
 }

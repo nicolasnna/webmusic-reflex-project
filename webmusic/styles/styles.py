@@ -10,19 +10,19 @@ class Size(Enum):
     BIGGEST = "1.5em"
 
 class FontSize(Enum):
-    SMALLEST = "0.5em"
-    SMALL = "0.8em"
-    DEFAULT = "1em"
-    BIG = "1.2em"
-    BIGGEST = "1.5em"
-    TITLE = "2em"
+    SMALLEST = "50%"
+    SMALL = "80%"
+    DEFAULT = "100%"
+    BIG = "120%"
+    BIGGEST = "150%"
+    TITLE = "200%"
 
 
 button_menu_style = dict(
     width="100%",
     height="100%",
     border_radius=Size.SMALL.value,
-    font_size=FontSize.DEFAULT.value,
+    font_size=FontSize.SMALL.value,
     padding_x=Size.SMALL.value,
     padding_y=Size.SMALL.value, 
     background_color=Color.BG_TERCERARY.value,
@@ -41,11 +41,10 @@ sidebar_style = dict(
     width="100%",
     left="0px",
     z_index="5",
-    padding_x=Size.SMALLEST.value,
+    padding_x="0",
     padding_y=Size.DEFAULT.value,
     background_color=Color.BG_TERCERARY.value,
     border_right=f"{Size.SMALLEST.value} solid {Color.GRADIENT.value}",
-   
 )
 
 footer_style = dict(

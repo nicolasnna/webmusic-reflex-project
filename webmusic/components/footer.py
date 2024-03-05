@@ -17,10 +17,12 @@ def footer() -> rx.Component:
             "Esta página ha sido desarrollada por fines educativos.",
             margin_top="0.6em",
             color=Color.TEXT_PRIMARY.value,
+            align="center",
         ),
         rx.text(
             "Nicolás Norambena Alarcón. 2024",
             color=Color.TEXT_PRIMARY.value,
+            align="center",
         ),
         direction="column",
         spacing="0",

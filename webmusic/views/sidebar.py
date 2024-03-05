@@ -3,7 +3,7 @@ from webmusic.views.menu_options_sidebar import menu_options_sidebar
 import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
 
-class SideBarSatate(rx.State):
+class SideBarState(rx.State):
     # Initial State
     state_sidebar: bool = True
 
@@ -12,10 +12,6 @@ class SideBarSatate(rx.State):
     
     def desactivate_sidebar(self):
         self.state_sidebar = False
-
-    @rx.var
-    def get_state_sidebar(self) -> bool:
-        return self.state_sidebar
 
 
 def sidebar() -> rx.Component:
@@ -27,12 +23,11 @@ def sidebar() -> rx.Component:
             ),
         rx.heading(
             "Descarga Música", 
-            font_size=styles.FontSize.BIGGEST.value,
+            font_size=styles.FontSize.BIG.value,
             margin_bottom=styles.Size.DEFAULT.value,
             color=Color.TEXT_PRIMARY.value,
             text_shadow="2px 2px 3px black",
-        ), 
-
+            ), 
         menu_options_sidebar(),
         style=styles.sidebar_style,
-    )
+        )

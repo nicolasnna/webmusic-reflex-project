@@ -3,16 +3,6 @@ from webmusic.views.menu_options_sidebar import menu_options_sidebar
 import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
 
-class SideBarState(rx.State):
-    # Initial State
-    state_sidebar: bool = True
-
-    def activate_sidebar(self):
-        self.state_sidebar = True
-    
-    def desactivate_sidebar(self):
-        self.state_sidebar = False
-
 
 def sidebar() -> rx.Component:
     return rx.vstack(            

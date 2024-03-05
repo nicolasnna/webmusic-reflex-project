@@ -1,0 +1,1 @@
+from webmusic.pages.youtube_info_page import youtube_info_page

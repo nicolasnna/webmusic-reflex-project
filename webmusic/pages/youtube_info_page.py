@@ -5,20 +5,21 @@ from webmusic.components.input_link import input_link
 from webmusic.components.title import title
 from webmusic.styles.colors import Color
 from webmusic.api.youtube_mp3_downloader import YoutubeMp3Downloader
+from webmusic.api.youtube_info import YoutubeInfo
 from webmusic.routes import Route
 
 @rx.page(
-    route=Route.INDEX.value, 
+    route="/hola_pages", 
     title='WebMusic', 
-    on_load=YoutubeMp3Downloader.getYoutubeMp3
+    on_load=YoutubeInfo.getYoutubeInfo
 )
-def main_page() -> rx.Component:
+def youtube_info_page() -> rx.Component:
     return rx.grid(
         sidebar(),
         rx.vstack(
             title(),
-            input_link(YoutubeMp3Downloader.getDataYoutubeMp3, YoutubeMp3Downloader.set_id),
-            rx.button('log',on_click=rx.console_log(YoutubeMp3Downloader.querystring)),    
+            input_link(YoutubeInfo.getDataYoutubeInfo,YoutubeInfo.set_id),
+            rx.button('log',on_click=rx.console_log(YoutubeInfo.querystring)),
             footer(),
             background_color=Color.BG_PRIMARY.value,
         ),
@@ -28,4 +29,5 @@ def main_page() -> rx.Component:
         width="100%",
         height="100%",
     )
+
 

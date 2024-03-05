@@ -37,7 +37,7 @@ button_menu_style = dict(
 
 sidebar_style = dict(
     position="sticky",
-    height="100%",
+    height="100vh",
     width="100%",
     left="0px",
     z_index="5",

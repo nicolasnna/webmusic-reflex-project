@@ -29,7 +29,6 @@ button_menu_style = dict(
     border=f"2px solid {Color.GRADIENT.value}",
     color=Color.TEXT_PRIMARY.value,
     background_image= f"linear-gradient({Color.GRADIENT.value}, {Color.BG_TERCERARY.value})",
-    transition_duration= "0.2s",
     _hover={
         "background_image": f"linear-gradient({Color.BG_TERCERARY.value}, {Color.GRADIENT_SECONDARY.value})",
     },
@@ -37,14 +36,18 @@ button_menu_style = dict(
 
 sidebar_style = dict(
     position="sticky",
-    height="100vh",
-    width="100%",
+    min_height="100vh",
+    max_height="max-content",
+    width="100%",    
     left="0px",
     z_index="5",
     padding_x="0",
     padding_y=Size.DEFAULT.value,
     background_color=Color.BG_TERCERARY.value,
     border_right=f"{Size.SMALLEST.value} solid {Color.GRADIENT.value}",
+    border_radius="0.7em",
+    transition="width 2s",
+    display="inline", 
 )
 
 footer_style = dict(
@@ -52,6 +55,15 @@ footer_style = dict(
     height="100%",
     background_color=Color.GRADIENT.value,
     padding_y=Size.SMALLEST.value,
+    padding_top=Size.BIGGEST.value,
+)
+
+grid_info_style = dict(
+    width="100%",
+    height="100%",
+    align="center",
+    templateColums="40% 60%",
+    templateRows="500px",
 )
 
 # Styles
@@ -78,5 +90,6 @@ BASE_STYLE = {
         "color":Color.TEXT_SECONDARY.value,
         "text_shadow":f"4px 4px 4px {Color.BG_SECONDARY.value}",
         "text_align":"center"
-    }
+    },
+
 }

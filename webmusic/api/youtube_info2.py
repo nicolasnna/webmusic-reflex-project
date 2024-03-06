@@ -11,9 +11,10 @@ class YoutubeInfo():
     }
 
     data = YoutubeInfoData()
-    id: str = ""
+    id: str = "mLW35YMzELE"
     querystring = {}
 
+    @rx.background
     async def getYoutubeInfo(self):
         async with self:
             response = rq.get(self.URL, headers=self.HEADERS, params=self.querystring)
@@ -23,9 +24,9 @@ class YoutubeInfo():
             length_thumbnail = len(response.json()['videoDetails']['thumbnail']['thumbnails'])
             self.data.image_src = response.json()['videoDetails']['thumbnail']['thumbnails'][length_thumbnail-1]
 
-
-    def getDataYoutubeInfo(self) -> list:
+    @rx.var
+    def getDataYoutubeInfo(self) -> YoutubeInfoData:
         self.querystring = {"id":self.id}
         #self.querystring = {"id":"mLW35YMzELE"}
-        return self.data 
+        return self.data
     

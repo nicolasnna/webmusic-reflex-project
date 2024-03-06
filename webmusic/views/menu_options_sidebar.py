@@ -11,5 +11,5 @@ def menu_options_sidebar() -> rx.Component:
         align_items="left",
         spacing="3",
         width="100%",
-        padding_x="1em"
+        padding_x="1em",
     )

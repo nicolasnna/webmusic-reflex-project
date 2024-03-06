@@ -31,7 +31,7 @@ def input_link(event_handler: list, data_saver: str) -> rx.Component:
                     width="100%",
                     height="100%",
                 ),
-                on_click=rx.console_log(event_handler),
+                on_click=event_handler,
                 style=styles.button_menu_style,
                 width="6.5em",
                 height="2.em",

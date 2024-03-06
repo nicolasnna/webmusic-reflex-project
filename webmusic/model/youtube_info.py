@@ -1,7 +1,9 @@
 import reflex as rx
 
 class YoutubeInfoData(rx.Base):
-    autor: str = ''
+    author: str = ''
     title: str = ''
     view_count: int = 0
-    image_src: str = ''
+    img_src: str = ''
+    img_width: int = 0
+    img_heihgt: int = 0

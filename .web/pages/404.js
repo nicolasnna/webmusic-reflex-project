@@ -2,8 +2,10 @@
 
 
 import { Fragment, useContext } from "react"
-import { EventLoopContext } from "/utils/context"
+import { EventLoopContext, StateContexts } from "/utils/context"
 import { Event, getBackendURL, isTrue } from "/utils/state"
+import { WifiOffIcon as LucideWifiOffIcon } from "lucide-react"
+import { keyframes } from "@emotion/react"
 import { Dialog as RadixThemesDialog, Text as RadixThemesText } from "@radix-ui/themes"
 import env from "/env.json"
 import Error from "next/error"
@@ -12,22 +14,22 @@ import NextHead from "next/head"
 
 
 
-export function Fragment_7c51549f6652ffceffab869c0602a73d () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
+export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
 
 
   return (
     <Fragment>
-  {isTrue(connectError !== null) ? (
+  {isTrue(connectErrors.length >= 2) ? (
   <Fragment>
-  <RadixThemesDialog.Root open={connectError !== null}>
+  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
   <RadixThemesDialog.Content>
   <RadixThemesDialog.Title>
   {`Connection Error`}
 </RadixThemesDialog.Title>
   <RadixThemesText as={`p`} css={{"fontSize": "80%", "color": "#1b1c4b"}}>
   {`Cannot connect to server: `}
-  {(connectError !== null) ? connectError.message : ''}
+  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
   {`. Check if server is reachable at `}
   {getBackendURL(env.EVENT).href}
 </RadixThemesText>
@@ -41,12 +43,47 @@ export function Fragment_7c51549f6652ffceffab869c0602a73d () {
   )
 }
 
+export function Fragment_e9a05c105aa9215aeba52aeec8fe2e76 () {
+  const state = useContext(StateContexts.state)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  return (
+    <Fragment>
+  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
+  {`wifi_off`}
+</LucideWifiOffIcon>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+
 export default function Component() {
   const routeNotFound = useClientSideRouting()
 
   return (
     <Fragment>
-  <Fragment_7c51549f6652ffceffab869c0602a73d/>
+  <Fragment>
+  <div css={{"position": "fixed", "width": "100vw", "height": "0"}}>
+  <Fragment_e9a05c105aa9215aeba52aeec8fe2e76/>
+</div>
+  <Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae/>
+</Fragment>
   <Fragment>
   {isTrue(routeNotFound) ? (
   <Fragment>

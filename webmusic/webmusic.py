@@ -11,4 +11,4 @@ app = rx.App(
 
 
 #app.api.add_api_route("/youtubemp3downloader", YoutubeMp3Downloader)
-#app.api.add_api_route("/youtubeinfo", YoutubeInfo)
+#app.api.add_api_route("/youtubeinfo/getDataYoutubeInfo", YoutubeInfo.getDataYoutubeInfo)

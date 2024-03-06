@@ -10,6 +10,7 @@ from webmusic.routes import Route
 @rx.page(
     route=Route.INDEX.value, 
     title='WebMusic', 
+    image="/auriculares.ico",
     on_load=YoutubeMp3Downloader.getYoutubeMp3
 )
 def main_page() -> rx.Component:
@@ -17,14 +18,15 @@ def main_page() -> rx.Component:
         sidebar(),
         rx.vstack(
             title(),
-            input_link(YoutubeMp3Downloader.getDataYoutubeMp3, YoutubeMp3Downloader.set_id),
+            input_link(rx.redirect(Route.YOUTUBE_INFO.value), YoutubeMp3Downloader.set_id),
             rx.button('log',on_click=rx.console_log(YoutubeMp3Downloader.querystring)),    
             footer(),
             background_color=Color.BG_PRIMARY.value,
-        ),
+            width="100%",
+        ),  
         columns="2",
         rows="1",
-        gridTemplateColumns="25% 75%",
+        gridTemplateColumns="20% 80%",
         width="100%",
         height="100%",
     )

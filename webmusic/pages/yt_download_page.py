@@ -9,10 +9,6 @@ from webmusic.styles.styles import Size
 from webmusic.api.manage_yt_apis import ManageYoutubeApi
 from webmusic.routes import Route
 
-# class PageState(rx.State):
-#     @rx.var
-#     def post_id(self) -> str:
-#         return self.router.page.params.get("id", "no id")
 
 @rx.page(
     route=f"{Route.YOUTUBE_DOWNLOAD.value}/[id]",

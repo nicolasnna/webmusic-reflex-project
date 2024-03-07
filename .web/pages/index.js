@@ -13,69 +13,17 @@ import NextHead from "next/head"
 
 
 
-export function Button_3f41850db7cd7113f5edec33790e1600 () {
+export function Button_84ac0e614af5b0bea354c7d6b55e84b5 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
-  const on_click_829758d0490a7fa8206219b3e88b9eb1 = useCallback((_e) => addEvents([Event("state.manage_youtube_api.get_id_from_url_and_redirect", {})], (_e), {}), [addEvents, Event])
+  const on_click_218768cbadcb1b73d2e7ee5bd46262b0 = useCallback((_e) => addEvents([Event("_console", {message:`jp\u00f1a`})], (_e), {}), [addEvents, Event])
 
   return (
-    <RadixThemesButton css={{"width": "6.5em", "height": "2.em", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_829758d0490a7fa8206219b3e88b9eb1}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
-  <RadixThemesText as={`p`} css={{"fontSize": "100%", "color": "#eef4ff"}}>
-  {`Buscar`}
-</RadixThemesText>
-  <LucideSearchIcon css={{"color": "var(--current-color)", "width": "2em", "heihgt": "2em"}}/>
-</RadixThemesFlex>
+    <RadixThemesButton onClick={on_click_218768cbadcb1b73d2e7ee5bd46262b0}>
+  {`log`}
 </RadixThemesButton>
   )
 }
-
-export function Link_930f221fdbd13504382fb74fa43b08ba () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`column`} gap={`2`}>
-  <RadixThemesAvatar css={{"width": "4em", "height": "4em"}} src={`/auriculares.ico`}/>
-  <RadixThemesHeading css={{"fontSize": "120%", "marginBottom": "1em", "color": "#eef4ff", "textShadow": "2px 2px 3px black", "textAlign": "center"}}>
-  {`Descarga Música`}
-</RadixThemesHeading>
-</RadixThemesFlex>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Fragment_e9a05c105aa9215aeba52aeec8fe2e76 () {
-  const state = useContext(StateContexts.state)
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  return (
-    <Fragment>
-  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
-  <Fragment>
-  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
-  {`wifi_off`}
-</LucideWifiOffIcon>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
-
-const pulse = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`
-
 
 export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
@@ -106,15 +54,58 @@ export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
   )
 }
 
-export function Button_84ac0e614af5b0bea354c7d6b55e84b5 () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
+export function Link_fd2ffc4e5e1bcd42615180d5336fd2cc () {
 
-  const on_click_218768cbadcb1b73d2e7ee5bd46262b0 = useCallback((_e) => addEvents([Event("_console", {message:`jp\u00f1a`})], (_e), {}), [addEvents, Event])
 
   return (
-    <RadixThemesButton onClick={on_click_218768cbadcb1b73d2e7ee5bd46262b0}>
-  {`log`}
+    <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/`} passHref={true}>
+  <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  {`segunda opcion`}
 </RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_930f221fdbd13504382fb74fa43b08ba () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/`} passHref={true}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`column`} gap={`2`}>
+  <RadixThemesAvatar css={{"width": "4em", "height": "4em"}} src={`/auriculares.ico`}/>
+  <RadixThemesHeading css={{"fontSize": "120%", "marginBottom": "1em", "color": "#eef4ff", "textShadow": "2px 2px 3px black", "textAlign": "center"}}>
+  {`Descarga Música`}
+</RadixThemesHeading>
+</RadixThemesFlex>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+
+export function Link_7b393dd77e002e31452609a5484313f7 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/`} passHref={true}>
+  <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  {`primera opcion`}
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
   )
 }
 
@@ -126,20 +117,6 @@ export function Link_ec117e2928eeb6129ae78030dbd9189f () {
   <NextLink href={`/`} passHref={true}>
   <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
   {`quinta opcion`}
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Link_7b393dd77e002e31452609a5484313f7 () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  {`primera opcion`}
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
@@ -170,6 +147,23 @@ export function Link_9bbc6ce943a15638cdc6b042d079b70d () {
   )
 }
 
+export function Button_3f41850db7cd7113f5edec33790e1600 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+  const on_click_829758d0490a7fa8206219b3e88b9eb1 = useCallback((_e) => addEvents([Event("state.manage_youtube_api.get_id_from_url_and_redirect", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <RadixThemesButton css={{"width": "6.5em", "height": "2.em", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_829758d0490a7fa8206219b3e88b9eb1}>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesText as={`p`} css={{"fontSize": "100%", "color": "#eef4ff"}}>
+  {`Buscar`}
+</RadixThemesText>
+  <LucideSearchIcon css={{"color": "var(--current-color)", "width": "2em", "heihgt": "2em"}}/>
+</RadixThemesFlex>
+</RadixThemesButton>
+  )
+}
+
 export function Link_22f122f3f5342e1d63fcdf600036852b () {
 
 
@@ -184,17 +178,23 @@ export function Link_22f122f3f5342e1d63fcdf600036852b () {
   )
 }
 
-export function Link_fd2ffc4e5e1bcd42615180d5336fd2cc () {
+export function Fragment_e9a05c105aa9215aeba52aeec8fe2e76 () {
+  const state = useContext(StateContexts.state)
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
 
 
   return (
-    <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "backgroundColor": "#373de1", "border": "2px solid #6474f0", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  {`segunda opcion`}
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
+    <Fragment>
+  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
+  {`wifi_off`}
+</LucideWifiOffIcon>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
   )
 }
 

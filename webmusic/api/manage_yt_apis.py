@@ -10,21 +10,33 @@ from webmusic.routes import Route
 import webmusic.styles.styles as styles
 
 class ManageYoutubeApi(rx.State):
+    '''
+    Class for Handling APIs: YT Info and YT Mp3 Download
+    '''
     data_info: YoutubeInfoData = YoutubeInfoData()
     data_download: YoutubeDownloadData = YoutubeDownloadData()
+    
     url: str = ""
     msg_response = ""
     msg_response_2 = ""
     from_redirect: bool = False
 
     def get_id_from_url_and_redirect(self):
+        '''
+        Extract the ID from the URL, then redirect to /yt_download.
+        '''
         start = re.search(r"=",self.url).span()[0]+1
         end = re.search(r"&|$",self.url).span()[0]
         self.data_info.id = self.url[start:end]
+
         self.from_redirect = True
+
         return rx.redirect(f"{Route.YOUTUBE_DOWNLOAD.value}/{self.data_info.id}")
 
     def _json_yt_info_to_data_info(self):
+        ''''
+        Save the API response from YT Info in the data_info (YoutubeInfoData)        
+        '''
         length_thumbnail = len(self.msg_response['thumbnail']['thumbnails'])
         self.data_info.author = self.msg_response['author']
         self.data_info.title = self.msg_response['title']    
@@ -35,20 +47,25 @@ class ManageYoutubeApi(rx.State):
 
 
     def _format_bytes(self):
+        '''
+        Convert from byte to KB, MB, GB or TB
+        '''
         # 2**10 = 1024
         power = 2**10
         n = 0
         power_labels = {0 : '', 1: 'Kb', 2: 'Mb', 3: 'Gb', 4: 'Tb'}
+
         while self.data_download.file_size > power:
             self.data_download.file_size /= power
             n += 1
+
         self.data_download.file_size = round(self.data_download.file_size,2)
         self.data_download.format_size = power_labels[n]
         
 
     def _json_yt_down_to_data_down(self):
         ''''
-        Save api's YT Download response in data download        
+        Save the API response from YT Download in the data_download (YoutubeDownloadData)
         '''
         self.data_download.link = self.msg_response_2['link']
         self.data_download.title = self.msg_response_2['title']
@@ -58,27 +75,40 @@ class ManageYoutubeApi(rx.State):
 
     @rx.background
     async def getYoutubeInfo(self):
+        '''
+        Send a request to YT Info's API
+        '''
         async with self:
             if not self.from_redirect:
                 self.data_info.id = self.router.page.params.get("id", "no id")
-            response = rq.get(cnst.URL_YT_INFO, headers=cnst.HEADERS_YT_INFO, params={"id": self.data_info.id})
+
+            response = rq.get(cnst.URL_YT_INFO, headers=cnst.HEADERS_YT_INFO, params={"id": self.
+            data_info.id})
             self.msg_response = response.json()['videoDetails']
+
             if self.msg_response == None:
                 styles.grid_info_style.update({'display': 'none'})
                 return rx.window_alert("No se ha encotrado el video de Youtube")
             else:
                 self._json_yt_info_to_data_info()
+
             self.from_redirect = False
             
     @rx.background
     async def getYoutubeMp3(self):
+        '''
+        Send a request to YT Download's API
+        '''
         async with self:
+
             response = rq.get(cnst.URL_YT_DOWN, headers=cnst.HEADERS_YT_DOWN, params={"id": self.data_info.id})
             self.msg_response_2 = response.json()
+
             if self.msg_response_2 == None:
                 return rx.window_alert("No se ha encotrado el video de Youtube")
             else:
                 self._json_yt_down_to_data_down()
+
             self.from_redirect = False
             
 

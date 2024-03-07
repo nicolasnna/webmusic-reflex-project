@@ -2,7 +2,6 @@
 import reflex as rx
 import webmusic.styles.styles as styles
 from webmusic.pages.main_page import main_page
-from webmusic.api.youtube_info2 import YoutubeInfo
 
 
 app = rx.App(

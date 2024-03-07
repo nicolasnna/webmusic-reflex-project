@@ -44,8 +44,6 @@ sidebar_style = dict(
     padding_x="0",
     padding_y=Size.DEFAULT.value,
     background_color=Color.BG_TERCERARY.value,
-    border_right=f"{Size.SMALLEST.value} solid {Color.GRADIENT.value}",
-    border_radius="0.7em",
     transition="width 2s",
     display="inline", 
 )
@@ -62,8 +60,13 @@ grid_info_style = dict(
     width="100%",
     height="100%",
     align="center",
-    templateColums="40% 60%",
-    templateRows="500px",
+    gridTemplateColums="40% 60%",
+    gridTemplateRows="max-content",
+)
+
+text_info_style = dict(
+    font_size=FontSize.BIG.value,
+    text_align="center"
 )
 
 # Styles
@@ -91,5 +94,4 @@ BASE_STYLE = {
         "text_shadow":f"4px 4px 4px {Color.BG_SECONDARY.value}",
         "text_align":"center"
     },
-
 }

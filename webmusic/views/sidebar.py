@@ -26,4 +26,5 @@ def sidebar() -> rx.Component:
         ),
         menu_options_sidebar(),
         style=styles.sidebar_style,
+        #content_visibility="hidden"
     )

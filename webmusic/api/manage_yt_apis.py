@@ -7,8 +7,8 @@ import webmusic.constants as cnst
 from webmusic.model.yt_info import YoutubeInfoData
 from webmusic.model.yt_download import YoutubeDownloadData
 from webmusic.routes import Route
-import webmusic.styles.styles as styles
-
+from .state_components import StateComponents
+import asyncio
 class ManageYoutubeApi(rx.State):
     '''
     Class for Handling APIs: YT Info and YT Mp3 Download
@@ -76,7 +76,7 @@ class ManageYoutubeApi(rx.State):
     @rx.background
     async def getYoutubeInfo(self):
         '''
-        Send a request to YT Info's API
+        Send a request to YT Info's API and evaluates the response
         '''
         async with self:
             if not self.from_redirect:
@@ -86,13 +86,17 @@ class ManageYoutubeApi(rx.State):
             data_info.id})
             self.msg_response = response.json()['videoDetails']
 
-            if self.msg_response == None:
-                styles.grid_info_style.update({'display': 'none'})
-                return rx.window_alert("No se ha encotrado el video de Youtube")
+            if self.msg_response == None or self.msg_response_2 == None:
+                
+                return [StateComponents.change_card_info(False),
+                        #rx.redirect("/"), 
+                        rx.window_alert("No se ha encontrado el video de Youtube")]
+                #return 
             else:
                 self._json_yt_info_to_data_info()
-
+            
             self.from_redirect = False
+            return StateComponents.change_card_info(True)
             
     @rx.background
     async def getYoutubeMp3(self):
@@ -104,9 +108,7 @@ class ManageYoutubeApi(rx.State):
             response = rq.get(cnst.URL_YT_DOWN, headers=cnst.HEADERS_YT_DOWN, params={"id": self.data_info.id})
             self.msg_response_2 = response.json()
 
-            if self.msg_response_2 == None:
-                return rx.window_alert("No se ha encotrado el video de Youtube")
-            else:
+            if self.msg_response != None and self.msg_response_2 != None:
                 self._json_yt_down_to_data_down()
 
             self.from_redirect = False

@@ -23,20 +23,21 @@ button_menu_style = dict(
     height="100%",
     border_radius=Size.SMALL.value,
     font_size=FontSize.SMALL.value,
-    padding_x=Size.SMALL.value,
-    padding_y=Size.SMALL.value, 
+    padding=Size.SMALLEST.value,
     background_color=Color.BG_TERCERARY.value,
-    border=f"2px solid {Color.GRADIENT.value}",
+    border=f"1px solid {Color.BG_PRIMARY.value}",
     color=Color.TEXT_PRIMARY.value,
     background_image= f"linear-gradient({Color.GRADIENT.value}, {Color.BG_TERCERARY.value})",
     _hover={
         "background_image": f"linear-gradient({Color.BG_TERCERARY.value}, {Color.GRADIENT_SECONDARY.value})",
     },
 )
+    
 
 sidebar_style = dict(
     position="sticky",
     min_height="100vh",
+    height="100%",
     max_height="max-content",
     width="100%",    
     left="0px",
@@ -45,8 +46,8 @@ sidebar_style = dict(
     padding_y=Size.DEFAULT.value,
     background_color=Color.BG_TERCERARY.value,
     transition="width 2s",
-    display="inline", 
 )
+
 
 footer_style = dict(
     width="100%",
@@ -89,7 +90,6 @@ BASE_STYLE = {
     },
     rx.heading: {
         "font_size":FontSize.TITLE.value,
-        "margin_bottom":Size.DEFAULT.value,
         "color":Color.TEXT_SECONDARY.value,
         "text_shadow":f"4px 4px 4px {Color.BG_SECONDARY.value}",
         "text_align":"center"

@@ -1,5 +1,5 @@
 import reflex as rx
-from webmusic.views.sidebar import sidebar_cond
+from webmusic.views.sidebar import sidebar_cond, sidebar_shortened
 from webmusic.components.card_info import card_info_cond
 from webmusic.components.footer import footer
 from webmusic.components.input_link import input_link
@@ -11,36 +11,51 @@ from webmusic.api.state_components import StateComponents
 from webmusic.routes import Route
 
 
+def page_content() -> rx.Component:
+    return rx.vstack(
+        rx.mobile_only(
+            sidebar_shortened(direction_stack="row"),
+            width="100%"
+        ),
+        header(),
+        title(),
+        input_link(
+            ManageYoutubeApi.get_id_from_url_and_redirect, 
+            ManageYoutubeApi.set_url
+        ),
+        card_info_cond(
+            ManageYoutubeApi.data_info,
+            ManageYoutubeApi.data_download  
+        ),
+        footer(),
+        background_color=Color.BG_PRIMARY.value,
+        width="100%",
+        spacing="0",
+    )    
+
+
 @rx.page(
     route=f"{Route.YOUTUBE_DOWNLOAD.value}/[id]",
     title='WebMusic', 
-    image="logo.ico",
-    on_load=[ManageYoutubeApi.getYoutubeInfo,
+    on_load=[StateComponents.change_card_info(False),
+             ManageYoutubeApi.getYoutubeInfo,
              ManageYoutubeApi.getYoutubeMp3]
 )
 def youtube_info_page() -> rx.Component:
-    return rx.grid(
-        sidebar_cond(),
-        rx.vstack(
-            header(),
-            title(),
-            input_link(
-                ManageYoutubeApi.get_id_from_url_and_redirect, 
-                ManageYoutubeApi.set_url
+    return rx.fragment(
+        rx.tablet_and_desktop(
+             rx.grid(
+                sidebar_cond(),
+                page_content(),
+                gridTemplateColumns=StateComponents.grid_sidebar,
+                width="100%",
+                height="100%",
             ),
-            card_info_cond(
-                ManageYoutubeApi.data_info,
-                ManageYoutubeApi.data_download  
-            ),
-            footer(),
-            background_color=Color.BG_PRIMARY.value,
-            
         ),
-        columns="2",
-        rows="1",
-        gridTemplateColumns=StateComponents.grid_sidebar,
-        width="100%",
-        height="100%",
+        rx.mobile_only(
+            page_content(),
+        ),
     )
+
 
 

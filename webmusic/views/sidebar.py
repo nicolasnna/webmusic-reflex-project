@@ -30,54 +30,47 @@ def sidebar_extended() -> rx.Component:
     )
 
 
-def sidebar_shortened() -> rx.Component:
-    return rx.vstack(         
+def sidebar_shortened(direction_stack: str) -> rx.Component:
+    return rx.stack(         
         rx.link(
             rx.vstack(
                 rx.avatar(
                     src="/auriculares.ico", 
-                    width="3em",
-                    height="3em",
+                    width="2.5em",
+                    height="auto",
                 ),
-            margin_bottom="2em",
+            margin_bottom="0.5em",
             ),
-        href=Route.INDEX.value,
-        is_external=False,
-        ),
-        menu_options_sidebar_shortened("column"),
-        style=styles.sidebar_style,
-    )
-
-def sidebar_mobile() -> rx.Component:
-    return rx.hstack(
-        rx.link(
-            rx.vstack(
-                rx.avatar(
-                    src="/auriculares.ico", 
-                    width="2em",
-                    height="2em",
-                ),
+            rx.tablet_and_desktop(
+                margin_y="2em",
             ),
-        href=Route.INDEX.value,
-        is_external=False,
-        width="max-content",
-        heihgt="100%",
-        margin_left="0.5em",
+            href=Route.INDEX.value,
+            is_external=False,
+            width="max-content",
+            heihgt="100%",
+            margin_x="0.5em",
         ),
-        menu_options_sidebar_shortened("row"),
-        gap="2.5em",
+        rx.mobile_only(
+            menu_options_sidebar_shortened("row"),
+            heihgt="100%",
+            gap="2.5em",
+        ),
+        rx.tablet_and_desktop(
+            menu_options_sidebar_shortened("column"),
+            height="100vh",
+            gap="1.5em",
+        ),
+        align="center",
         background_color=Color.BG_TERCERARY.value,
         padding_y=styles.Size.SMALLEST.value,
-        align="start",
         width="100%",
-        heihgt="100%",
+        direction=direction_stack,
     )
-
 
 def sidebar_cond() -> rx.Component:
     return rx.vstack(rx.cond(
         StateComponents.extend_sidebar,
         sidebar_extended(),
-        sidebar_shortened(),    
+        sidebar_shortened(direction_stack="column"),    
         ),
     )

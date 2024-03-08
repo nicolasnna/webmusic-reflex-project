@@ -8,7 +8,6 @@ from webmusic.model.yt_info import YoutubeInfoData
 from webmusic.model.yt_download import YoutubeDownloadData
 from webmusic.routes import Route
 from .state_components import StateComponents
-import asyncio
 class ManageYoutubeApi(rx.State):
     '''
     Class for Handling APIs: YT Info and YT Mp3 Download
@@ -37,7 +36,7 @@ class ManageYoutubeApi(rx.State):
         ''''
         Save the API response from YT Info in the data_info (YoutubeInfoData)        
         '''
-        length_thumbnail = len(self.msg_response['thumbnail']['thumbnails'])
+        length_thumbnail = len(self.msg_response['thumbnail']['thumbnails'])-1
         self.data_info.author = self.msg_response['author']
         self.data_info.title = self.msg_response['title']    
         self.data_info.view_count = "{:,}".format(int(self.msg_response['viewCount']))
@@ -73,6 +72,7 @@ class ManageYoutubeApi(rx.State):
         self.data_download.file_size = self.msg_response_2['filesize']
         self._format_bytes()
 
+
     @rx.background
     async def getYoutubeInfo(self):
         '''
@@ -87,16 +87,12 @@ class ManageYoutubeApi(rx.State):
             self.msg_response = response.json()['videoDetails']
 
             if self.msg_response == None or self.msg_response_2 == None:
-                
                 return [StateComponents.change_card_info(False),
-                        #rx.redirect("/"), 
                         rx.window_alert("No se ha encontrado el video de Youtube")]
-                #return 
             else:
                 self._json_yt_info_to_data_info()
             
             self.from_redirect = False
-            return StateComponents.change_card_info(True)
             
     @rx.background
     async def getYoutubeMp3(self):
@@ -112,7 +108,10 @@ class ManageYoutubeApi(rx.State):
                 self._json_yt_down_to_data_down()
 
             self.from_redirect = False
-            
+
+            # Change card info state once the file size has been formatted
+            if self.data_download.format_size != '':
+                return StateComponents.change_card_info(True)
 
     @rx.var
     def getDataYoutubeInfo(self) -> YoutubeInfoData:

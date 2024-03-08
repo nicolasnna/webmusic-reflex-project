@@ -14,6 +14,103 @@ import NextHead from "next/head"
 
 
 
+export function Fragment_966c0378eb9d65bdfb5286644be9b831 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+  const state = useContext(StateContexts.state)
+
+
+  return (
+    <Fragment>
+  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
+  {`wifi_off`}
+</LucideWifiOffIcon>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
+export function Fragment_6f0c35f34c8f73a29cf4d83d3eb83136 () {
+  const state__state_components = useContext(StateContexts.state__state_components)
+
+
+  return (
+    <Fragment>
+  {isTrue(state__state_components.extend_sidebar) ? (
+  <Fragment>
+  <LucideArrowLeftToLineIcon css={{"color": "var(--current-color)", "width": "2em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
+</Fragment>
+) : (
+  <Fragment>
+  <LucideArrowRightToLineIcon css={{"color": "var(--current-color)", "width": "2em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
+</Fragment>
+)}
+</Fragment>
+  )
+}
+
+export function Button_53d37e72acfdeee2fef7aa7acebb556f () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+  const on_click_9454e5c339d1838425daf0a7e41cb849 = useCallback((_e) => addEvents([Event("state.state_components.change_sidebar", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <RadixThemesButton css={{"backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "padding": "0.4em", "width": "max-content", "heihgt": "max-content", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_9454e5c339d1838425daf0a7e41cb849}>
+  <Fragment_6f0c35f34c8f73a29cf4d83d3eb83136/>
+</RadixThemesButton>
+  )
+}
+
+export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  return (
+    <Fragment>
+  {isTrue(connectErrors.length >= 2) ? (
+  <Fragment>
+  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
+  <RadixThemesDialog.Content>
+  <RadixThemesDialog.Title>
+  {`Connection Error`}
+</RadixThemesDialog.Title>
+  <RadixThemesText as={`p`} css={{"fontSize": "80%", "color": "#1b1c4b"}}>
+  {`Cannot connect to server: `}
+  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
+  {`. Check if server is reachable at `}
+  {getBackendURL(env.EVENT).href}
+</RadixThemesText>
+</RadixThemesDialog.Content>
+</RadixThemesDialog.Root>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
+export function Button_3e7b718634d6d31641fdd2e5cedb5f8f () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+  const on_click_829758d0490a7fa8206219b3e88b9eb1 = useCallback((_e) => addEvents([Event("state.manage_youtube_api.get_id_from_url_and_redirect", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <RadixThemesButton css={{"width": "6.5em", "height": "2.em", "borderRadius": "0.7em", "fontSize": "80%", "padding": "0.4em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_829758d0490a7fa8206219b3e88b9eb1}>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesText as={`p`} css={{"fontSize": "100%", "color": "#eef4ff"}}>
+  {`Buscar`}
+</RadixThemesText>
+  <LucideSearchIcon css={{"color": "var(--current-color)", "width": "2.5em", "heihgt": "auto", "strokeWidth": "2"}}/>
+</RadixThemesFlex>
+</RadixThemesButton>
+  )
+}
+
 export function Link_946febab9167efbee47da7ba55649224 () {
 
 
@@ -28,30 +125,6 @@ export function Link_946febab9167efbee47da7ba55649224 () {
 </RadixThemesLink>
   )
 }
-
-export function Link_38ae1c5dff0d3e42eddfe5c51028966a () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
-  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "padding": "0.4em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/logo-spotify.ico`}/>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-const pulse = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`
-
 
 export function Grid_0868bdf08790ae7811a9f607f69a951d () {
   const state__state_components = useContext(StateContexts.state__state_components)
@@ -130,44 +203,17 @@ export function Grid_0868bdf08790ae7811a9f607f69a951d () {
   )
 }
 
-export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
+export function Link_38ae1c5dff0d3e42eddfe5c51028966a () {
 
 
   return (
-    <Fragment>
-  {isTrue(connectErrors.length >= 2) ? (
-  <Fragment>
-  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
-  <RadixThemesDialog.Content>
-  <RadixThemesDialog.Title>
-  {`Connection Error`}
-</RadixThemesDialog.Title>
-  <RadixThemesText as={`p`} css={{"fontSize": "80%", "color": "#1b1c4b"}}>
-  {`Cannot connect to server: `}
-  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
-  {`. Check if server is reachable at `}
-  {getBackendURL(env.EVENT).href}
-</RadixThemesText>
-</RadixThemesDialog.Content>
-</RadixThemesDialog.Root>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
-
-export function Button_84ac0e614af5b0bea354c7d6b55e84b5 () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-  const on_click_218768cbadcb1b73d2e7ee5bd46262b0 = useCallback((_e) => addEvents([Event("_console", {message:`jp\u00f1a`})], (_e), {}), [addEvents, Event])
-
-  return (
-    <RadixThemesButton onClick={on_click_218768cbadcb1b73d2e7ee5bd46262b0}>
-  {`log`}
+    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/`} passHref={true}>
+  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "padding": "0.4em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/logo-spotify.ico`}/>
 </RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
   )
 }
 
@@ -182,36 +228,6 @@ export function Link_c91d25ec631848602f41236b1ec41797 () {
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
-  )
-}
-
-export function Textfield__input_4ab82d54ac6dbb0adaeefb29ac1b7e4d () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-  const on_blur_ce8b2331a880fc9468bf3bb159d8c0fa = useCallback((_e0) => addEvents([Event("state.manage_youtube_api.set_url", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
-
-  return (
-    <RadixThemesTextField.Input css={{"width": "20em", "colorScheme": "whiteAlpha"}} onBlur={on_blur_ce8b2331a880fc9468bf3bb159d8c0fa} placeholder={`Pega el enlace aquí`} variant={`classic`}/>
-  )
-}
-
-export function Fragment_966c0378eb9d65bdfb5286644be9b831 () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-  const state = useContext(StateContexts.state)
-
-
-  return (
-    <Fragment>
-  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
-  <Fragment>
-  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
-  {`wifi_off`}
-</LucideWifiOffIcon>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
   )
 }
 
@@ -353,51 +369,35 @@ export function Fragment_e64597ae29991ea3fbc9ef166ec87e89 () {
   )
 }
 
-export function Button_3e7b718634d6d31641fdd2e5cedb5f8f () {
+export function Button_84ac0e614af5b0bea354c7d6b55e84b5 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
-  const on_click_829758d0490a7fa8206219b3e88b9eb1 = useCallback((_e) => addEvents([Event("state.manage_youtube_api.get_id_from_url_and_redirect", {})], (_e), {}), [addEvents, Event])
+  const on_click_218768cbadcb1b73d2e7ee5bd46262b0 = useCallback((_e) => addEvents([Event("_console", {message:`jp\u00f1a`})], (_e), {}), [addEvents, Event])
 
   return (
-    <RadixThemesButton css={{"width": "6.5em", "height": "2.em", "borderRadius": "0.7em", "fontSize": "80%", "padding": "0.4em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_829758d0490a7fa8206219b3e88b9eb1}>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
-  <RadixThemesText as={`p`} css={{"fontSize": "100%", "color": "#eef4ff"}}>
-  {`Buscar`}
-</RadixThemesText>
-  <LucideSearchIcon css={{"color": "var(--current-color)", "width": "2.5em", "heihgt": "auto", "strokeWidth": "2"}}/>
-</RadixThemesFlex>
+    <RadixThemesButton onClick={on_click_218768cbadcb1b73d2e7ee5bd46262b0}>
+  {`log`}
 </RadixThemesButton>
   )
 }
 
-export function Fragment_6f0c35f34c8f73a29cf4d83d3eb83136 () {
-  const state__state_components = useContext(StateContexts.state__state_components)
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
 
 
-  return (
-    <Fragment>
-  {isTrue(state__state_components.extend_sidebar) ? (
-  <Fragment>
-  <LucideArrowLeftToLineIcon css={{"color": "var(--current-color)", "width": "2em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
-</Fragment>
-) : (
-  <Fragment>
-  <LucideArrowRightToLineIcon css={{"color": "var(--current-color)", "width": "2em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
-</Fragment>
-)}
-</Fragment>
-  )
-}
-
-export function Button_53d37e72acfdeee2fef7aa7acebb556f () {
+export function Textfield__input_4ab82d54ac6dbb0adaeefb29ac1b7e4d () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
 
-  const on_click_9454e5c339d1838425daf0a7e41cb849 = useCallback((_e) => addEvents([Event("state.state_components.change_sidebar", {})], (_e), {}), [addEvents, Event])
+  const on_blur_ce8b2331a880fc9468bf3bb159d8c0fa = useCallback((_e0) => addEvents([Event("state.manage_youtube_api.set_url", {value:_e0.target.value})], (_e0), {}), [addEvents, Event])
 
   return (
-    <RadixThemesButton css={{"backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "padding": "0.4em", "width": "max-content", "heihgt": "max-content", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_9454e5c339d1838425daf0a7e41cb849}>
-  <Fragment_6f0c35f34c8f73a29cf4d83d3eb83136/>
-</RadixThemesButton>
+    <RadixThemesTextField.Input css={{"width": "20em", "colorScheme": "whiteAlpha"}} onBlur={on_blur_ce8b2331a880fc9468bf3bb159d8c0fa} placeholder={`Pega el enlace aquí`} variant={`classic`}/>
   )
 }
 

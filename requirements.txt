@@ -1,3 +1,4 @@
-reflex==0.4.3
-python-dotenv==1.0.1
+pip==24.0
 python-decouple==3.8
+python-dotenv==1.0.1
+reflex==0.4.3

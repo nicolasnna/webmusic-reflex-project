@@ -1,5 +1,5 @@
 import reflex as rx
-from webmusic.views.sidebar import sidebar_cond
+from webmusic.views.sidebar import sidebar_cond,sidebar_mobile
 from webmusic.components.footer import footer
 from webmusic.components.input_link import input_link
 from webmusic.components.title import title
@@ -31,6 +31,7 @@ def main_page() -> rx.Component:
             footer(),
             background_color=Color.BG_PRIMARY.value,
             width="100%",
+            spacing="0",
         ),  
         columns="2",
         rows="1",

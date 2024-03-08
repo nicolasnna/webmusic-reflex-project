@@ -44,8 +44,33 @@ def sidebar_shortened() -> rx.Component:
         href=Route.INDEX.value,
         is_external=False,
         ),
-        menu_options_sidebar_shortened(),
+        menu_options_sidebar_shortened("column"),
         style=styles.sidebar_style,
+    )
+
+def sidebar_mobile() -> rx.Component:
+    return rx.hstack(
+        rx.link(
+            rx.vstack(
+                rx.avatar(
+                    src="/auriculares.ico", 
+                    width="2em",
+                    height="2em",
+                ),
+            ),
+        href=Route.INDEX.value,
+        is_external=False,
+        width="max-content",
+        heihgt="100%",
+        margin_left="0.5em",
+        ),
+        menu_options_sidebar_shortened("row"),
+        gap="2.5em",
+        background_color=Color.BG_TERCERARY.value,
+        padding_y=styles.Size.SMALLEST.value,
+        align="start",
+        width="100%",
+        heihgt="100%",
     )
 
 

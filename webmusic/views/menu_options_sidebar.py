@@ -9,7 +9,8 @@ def menu_options_sidebar() -> rx.Component:
             rx.hstack(
                 rx.image(
                     src="/logo-yt.ico",
-                    width="2.5em",
+                    width="100%",
+                    max_width="2.5em",
                     height="auto",
                 ),
                 rx.text(
@@ -18,58 +19,67 @@ def menu_options_sidebar() -> rx.Component:
                     color=Color.TEXT_PRIMARY.value,
                 ),
             ),
-            "/"
+            "/",
+            width_botton="100%",
+            width_link="100%"
         ),
-        select_options("segunda opcion","/"),
-        select_options("tercera opcion","/"),
-        select_options("cuarta opcion","/"),
-        select_options("quinta opcion","/"),
+        select_options("segunda opcion","/",
+            width_botton="100%",
+            width_link="100%"),
+        select_options("tercera opcion","/",
+            width_botton="100%",
+            width_link="100%"),
+        select_options("cuarta opcion","/",
+            width_botton="100%",
+            width_link="100%"),
         align_items="left",
         spacing="3",
         width="100%",
         padding_x="1em",
     )
 
-def menu_options_sidebar_shortened() -> rx.Component:
-    return rx.vstack(
+def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
+    return rx.stack(
         select_options(
             rx.image(
                 src="/logo-yt.ico",
                 width="2.5em",
                 height="auto",
-                # color="red",
-                # stroke_width="2"
                 ),
-            "/"),
+            "/",
+            width_botton="max-content",
+            width_link="max-content"),
         select_options(
             rx.image(
                 src="/logo-spotify.ico",
                 width="2.5em",
                 height="auto",
-                # color="red",
-                # stroke_width="2"
                 ),
-            "/"),
+            "/",
+            width_botton="max-content",
+            width_link="max-content"),
         select_options(
             rx.image(
                 src="/logo-spotify.ico",
                 width="2.5em",
                 height="auto",
-                # color="red",
-                # stroke_width="2"
                 ),
-            "/"),
+            "/",
+            width_botton="max-content",
+            width_link="max-content"),
         select_options(
             rx.image(
                 src="/logo-yt.ico",
                 width="2.5em",
                 height="auto",
-                # color="red",
-                # stroke_width="2"
                 ),
-            "/"),
-        align_items="left",
+            "/",
+            width_botton="max-content",
+            width_link="max-content",
+            ),
+        align_items="center",
         spacing="3",
-        width="100%",
+        width="max-content",
         padding_x="0.4em",
+        direction=direction_option,
     )

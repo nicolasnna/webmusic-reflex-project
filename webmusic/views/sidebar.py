@@ -26,7 +26,7 @@ def sidebar_extended() -> rx.Component:
         is_external=False,
         ),
         menu_options_sidebar(),
-        style=styles.sidebar_style,
+        style=styles.sidebar_extended_style,
     )
 
 
@@ -60,10 +60,7 @@ def sidebar_shortened(direction_stack: str) -> rx.Component:
             height="100vh",
             gap="1.5em",
         ),
-        align="center",
-        background_color=Color.BG_TERCERARY.value,
-        padding_y=styles.Size.SMALLEST.value,
-        width="100%",
+        style=styles.sidebar_shortened_style,
         direction=direction_stack,
     )
 

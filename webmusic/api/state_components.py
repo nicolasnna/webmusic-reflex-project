@@ -2,8 +2,8 @@ import reflex as rx
 
 class StateComponents(rx.State):
     show_card_info: bool = False
-    extend_sidebar: bool = True
-    grid_sidebar: str = "22% 78%"
+    extend_sidebar: bool = False
+    grid_sidebar: str = "5% 95%"
 
     def change_card_info(self, state: bool):
         self.show_card_info = state

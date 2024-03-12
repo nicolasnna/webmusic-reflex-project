@@ -14,6 +14,35 @@ import NextHead from "next/head"
 
 
 
+export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+
+  return (
+    <Fragment>
+  {isTrue(connectErrors.length >= 2) ? (
+  <Fragment>
+  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
+  <RadixThemesDialog.Content>
+  <RadixThemesDialog.Title>
+  {`Connection Error`}
+</RadixThemesDialog.Title>
+  <RadixThemesText as={`p`} css={{"fontSize": "80%", "color": "#1b1c4b"}}>
+  {`Cannot connect to server: `}
+  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
+  {`. Check if server is reachable at `}
+  {getBackendURL(env.EVENT).href}
+</RadixThemesText>
+</RadixThemesDialog.Content>
+</RadixThemesDialog.Root>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
 export function Fragment_966c0378eb9d65bdfb5286644be9b831 () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
   const state = useContext(StateContexts.state)
@@ -43,35 +72,6 @@ const pulse = keyframes`
     }
 `
 
-
-export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-  return (
-    <Fragment>
-  {isTrue(connectErrors.length >= 2) ? (
-  <Fragment>
-  <RadixThemesDialog.Root css={{"zIndex": 9999}} open={connectErrors.length >= 2}>
-  <RadixThemesDialog.Content>
-  <RadixThemesDialog.Title>
-  {`Connection Error`}
-</RadixThemesDialog.Title>
-  <RadixThemesText as={`p`} css={{"fontSize": "80%", "color": "#1b1c4b"}}>
-  {`Cannot connect to server: `}
-  {(connectErrors.length > 0) ? connectErrors[connectErrors.length - 1].message : ''}
-  {`. Check if server is reachable at `}
-  {getBackendURL(env.EVENT).href}
-</RadixThemesText>
-</RadixThemesDialog.Content>
-</RadixThemesDialog.Root>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
 
 export default function Component() {
   const routeNotFound = useClientSideRouting()

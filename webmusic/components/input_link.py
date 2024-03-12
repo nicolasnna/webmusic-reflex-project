@@ -2,18 +2,12 @@ import reflex as rx
 import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
 
-def input_link(event_handler: list, data_saver: str) -> rx.Component:
+def input_link(event_handler: list, data_saver: str, text_input: str) -> rx.Component:
     return rx.vstack(
-        rx.text(
-            "Primero añade el enlace de la canción",
-            font_size=styles.FontSize.BIG.value,
-            text_align="center",
-            margin_bottom="1em",
-            ),
         rx.tablet_and_desktop(
             rx.hstack(
                 rx.input(
-                    placeholder="Pega el enlace aquí",
+                    placeholder=text_input,
                     width="20em",
                     colorScheme="whiteAlpha",
                     variant="classic",

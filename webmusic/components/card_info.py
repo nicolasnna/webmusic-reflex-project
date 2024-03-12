@@ -20,12 +20,25 @@ def card_content(data_info: rx.Base, data_download: rx.Base) -> rx.Component:
                 height="100%",
             ),
             rx.spacer(),
-            rx.text(
-                "Peso del archivo: ",
-                rx.text.strong(f"{data_download.file_size} {data_download.format_size}"),
-                style=styles.text_info_style,
-                height="100%"
-            ), 
+            rx.hover_card.root(
+                rx.hover_card.trigger(
+                    rx.text(
+                        "Peso del archivo: ",
+                        rx.text.strong(f"{data_download.file_size} {data_download.format_size}"),
+                        style=styles.text_info_style,
+                        height="100%"
+                    ), 
+                ),
+                rx.hover_card.content(
+                    rx.text(
+                        "Solo se reconoce canciones individuales, las playlist se omiten",
+                        font_size=styles.FontSize.DEFAULT.value,
+                        text_align="center",
+                        color=Color.TEXT_SECONDARY.value,
+                        margin_bottom="1em",
+                    ),
+                ),
+            ),
             spacing="4",
             width="100%",
             align="center",
@@ -63,7 +76,7 @@ def card_info_cond(data_info: rx.Base, data_download: rx.Base) -> rx.Component:
                     rx.image(
                         src=data_info.img_src,
                         width=f"{data_info.img_width}px",
-                        align="center",
+                        height="auto",
                         padding=styles.Size.BIG.value,
                     ),
                     rx.grid(

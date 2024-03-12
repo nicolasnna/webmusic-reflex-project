@@ -8,6 +8,7 @@ from webmusic.model.yt_info import YoutubeInfoData
 from webmusic.model.yt_download import YoutubeDownloadData
 from webmusic.routes import Route
 from .state_components import StateComponents
+
 class ManageYoutubeApi(rx.State):
     '''
     Class for Handling APIs: YT Info and YT Mp3 Download
@@ -19,6 +20,22 @@ class ManageYoutubeApi(rx.State):
     msg_response = ""
     msg_response_2 = ""
     from_redirect: bool = False
+
+    def create_blank_template(self):
+        '''
+        Create a blank template for YoutubeInfoData and YoutubeDownloadData
+        '''
+        self.data_info.title = 'Desconocido'
+        self.data_info.author = 'Desconocido'
+        self.data_info.view_count = '0'
+        self.data_info.img_src = '/interrogacion.png'
+        self.data_info.img_width = '640'
+        self.data_info.img_height = '360'
+
+        self.data_download.title = 'desconocido'
+        self.data_download.file_size = 0
+        self.data_download.format_size = 'kb'
+        self.data_download.link = '/interrogacion.png'
 
     def get_id_from_url_and_redirect(self):
         '''
@@ -69,8 +86,12 @@ class ManageYoutubeApi(rx.State):
         self.data_download.link = self.msg_response_2['link']
         self.data_download.title = self.msg_response_2['title']
         self.data_download.duration = self.msg_response_2['duration']
-        self.data_download.file_size = self.msg_response_2['filesize']
-        self._format_bytes()
+        try:
+            self.data_download.file_size = self.msg_response_2['filesize']
+            self._format_bytes()
+        except:
+            self.data_download.file_size = '0'
+            self.data_download.format_size = 'b'
 
 
     @rx.background
@@ -109,8 +130,8 @@ class ManageYoutubeApi(rx.State):
 
             self.from_redirect = False
 
-            # Change card info state once the file size has been formatted
-            if self.data_download.format_size != '':
+            # Change card info state once the file size has been obtained
+            if self.data_download.file_size != 0:
                 return StateComponents.change_card_info(True)
 
     @rx.var

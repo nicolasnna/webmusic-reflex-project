@@ -1,11 +1,13 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 import reflex as rx
 import webmusic.styles.styles as styles
-from .api.manage_yt_apis import ManageYoutubeApi
 
 
 app = rx.App(
-    style=styles.BASE_STYLE
+    style=styles.BASE_STYLE,
+    theme=rx.theme(
+        appearance="light", has_background=True, radius="large", accent_color="teal"
+    )
 )
 
 

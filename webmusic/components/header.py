@@ -10,13 +10,13 @@ def header() -> rx.Component:
                 StateComponents.extend_sidebar,
                 rx.icon(
                     tag="arrow-left-to-line",
-                    width="2em",
+                    width="3em",
                     heihgt="auto",
                     stroke_width="2.5"
                 ),
                 rx.icon(
                     tag="arrow-right-to-line",
-                    width="2em",
+                    width="3em",
                     heihgt="auto",
                     stroke_width="2.5"
                 ),
@@ -39,6 +39,7 @@ def header() -> rx.Component:
             font_size=styles.FontSize.BIGGEST.value,
             color=Color.TEXT_PRIMARY.value,
             text_shadow="4px 4px 4px black",
+            margin_left="2em",
         ), 
         rx.spacer(),
         rx.heading(

@@ -34,8 +34,7 @@ button_menu_style = dict(
 )
     
 
-sidebar_style = dict(
-    position="sticky",
+sidebar_extended_style = dict(
     min_height="100vh",
     height="100%",
     max_height="max-content",
@@ -48,6 +47,15 @@ sidebar_style = dict(
     transition="width 2s",
 )
 
+sidebar_shortened_style = dict(
+    align="center",
+    height="100%",
+    max_height="max-content",
+    padding_y=Size.SMALLEST.value,
+    width="100%",
+    background_color=Color.BG_TERCERARY.value,
+    z_index="5",
+)
 
 footer_style = dict(
     width="100%",
@@ -60,9 +68,9 @@ footer_style = dict(
 grid_info_style = dict(
     width="100%",
     height="100%",
-    align="center",
     gridTemplateColums="40% 60%",
     gridTemplateRows="max-content",
+    place_items="center",
 )
 
 text_info_style = dict(

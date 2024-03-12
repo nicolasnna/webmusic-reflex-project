@@ -2,6 +2,7 @@ import reflex as rx
 from webmusic.components.select_options import select_options
 import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
+from webmusic.routes import Route
 
 def menu_options_sidebar() -> rx.Component:
     return rx.vstack(
@@ -19,7 +20,7 @@ def menu_options_sidebar() -> rx.Component:
                     color=Color.TEXT_PRIMARY.value,
                 ),
             ),
-            "/",
+            f"{Route.YOUTUBE_DOWNLOAD.value}",
             width_botton="100%",
             width_link="100%"
         ),
@@ -46,7 +47,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
                 width="2.5em",
                 height="auto",
                 ),
-            "/",
+            f"{Route.YOUTUBE_DOWNLOAD.value}",
             width_botton="max-content",
             width_link="max-content"),
         select_options(

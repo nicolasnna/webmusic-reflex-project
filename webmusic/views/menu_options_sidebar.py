@@ -3,13 +3,14 @@ from webmusic.components.select_options import select_options
 import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
 from webmusic.routes import Route
+import webmusic.utils as utils
 
 def menu_options_sidebar() -> rx.Component:
     return rx.vstack(
         select_options(
             rx.hstack(
                 rx.image(
-                    src="/logo-yt.ico",
+                    src=utils.YOUTUBE_ICON,
                     width="100%",
                     max_width="2.5em",
                     height="auto",
@@ -43,7 +44,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
     return rx.stack(
         select_options(
             rx.image(
-                src="/logo-yt.ico",
+                src=utils.YOUTUBE_ICON,
                 width="2.5em",
                 height="auto",
                 ),
@@ -52,7 +53,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
             width_link="max-content"),
         select_options(
             rx.image(
-                src="/logo-spotify.ico",
+                src=utils.SPOTIFY_ICON,
                 width="2.5em",
                 height="auto",
                 ),
@@ -61,7 +62,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
             width_link="max-content"),
         select_options(
             rx.image(
-                src="/logo-spotify.ico",
+                src=utils.SPOTIFY_ICON,
                 width="2.5em",
                 height="auto",
                 ),
@@ -70,7 +71,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
             width_link="max-content"),
         select_options(
             rx.image(
-                src="/logo-yt.ico",
+                src=utils.YOUTUBE_ICON,
                 width="2.5em",
                 height="auto",
                 ),
@@ -81,6 +82,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
         align_items="center",
         spacing="3",
         width="max-content",
+        height="100%",
         padding_x="0.4em",
         direction=direction_option,
     )

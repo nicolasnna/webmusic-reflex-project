@@ -4,13 +4,14 @@ import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
 from webmusic.routes import Route
 from webmusic.api.state_components import StateComponents
+import webmusic.utils as utils
 
 def sidebar_extended() -> rx.Component:
     return rx.vstack(         
         rx.link(
             rx.vstack(
                 rx.avatar(
-                    src="/auriculares.ico", 
+                    src=utils.WEB_LOGO, 
                     width="4em",
                     height="4em",
                 ),
@@ -35,7 +36,7 @@ def sidebar_shortened(direction_stack: str) -> rx.Component:
         rx.link(
             rx.vstack(
                 rx.avatar(
-                    src="/auriculares.ico", 
+                    src=utils.WEB_LOGO, 
                     width="2.5em",
                     height="auto",
                 ),
@@ -57,7 +58,7 @@ def sidebar_shortened(direction_stack: str) -> rx.Component:
         ),
         rx.tablet_and_desktop(
             menu_options_sidebar_shortened("column"),
-            height="100vh",
+            height="100%",
             gap="1.5em",
         ),
         style=styles.sidebar_shortened_style,

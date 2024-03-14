@@ -33,11 +33,8 @@ button_menu_style = dict(
     },
 )
     
-
 sidebar_extended_style = dict(
-    min_height="100vh",
     height="100%",
-    max_height="max-content",
     width="100%",    
     left="0px",
     z_index="5",
@@ -50,7 +47,6 @@ sidebar_extended_style = dict(
 sidebar_shortened_style = dict(
     align="center",
     height="100%",
-    max_height="max-content",
     padding_y=Size.SMALLEST.value,
     width="100%",
     background_color=Color.BG_TERCERARY.value,
@@ -59,9 +55,10 @@ sidebar_shortened_style = dict(
 
 footer_style = dict(
     width="100%",
-    height="100%",
+    height="max-content",
     background_color=Color.GRADIENT.value,
     padding_y=Size.SMALLEST.value,
+    margin_top="5em",
     padding_top=Size.BIGGEST.value,
 )
 
@@ -76,6 +73,19 @@ grid_info_style = dict(
 text_info_style = dict(
     font_size=FontSize.BIG.value,
     text_align="center"
+)
+
+icon_link_style = dict(
+    is_external=False,
+    width="max-content",
+    height="max-content",
+    border=f"2px solid {Color.BG_TERCERARY.value}",
+    border_radius="1em",
+    bg=Color.TEXT_PRIMARY.value,
+    padding="0.5em",
+    _hover={
+        "bg": Color.GRADIENT_SECONDARY.value,   
+    }
 )
 
 # Styles

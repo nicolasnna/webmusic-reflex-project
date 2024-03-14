@@ -10,6 +10,7 @@ from webmusic.api.manage_yt_apis import ManageYoutubeApi
 from webmusic.api.state_components import StateComponents
 from webmusic.routes import Route
 import webmusic.styles.styles as styles
+import webmusic.utils as utils
 
 
 def page_content() -> rx.Component:
@@ -20,9 +21,9 @@ def page_content() -> rx.Component:
         ),
         header(),
         rx.image(
-            src="/logo-yt.ico",
+            src=utils.YOUTUBE_ICON,
             width="100%",
-            max_width="4.5em",
+            max_width="5.5em",
             height="auto",
         ),
         title("Descarga tus músicas preferidas en MP3 desde Youtube"),

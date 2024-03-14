@@ -7,6 +7,7 @@ from webmusic.styles.colors import Color
 from webmusic.api.state_components import StateComponents
 from webmusic.routes import Route
 import webmusic.styles.styles as styles
+import webmusic.utils as utils
 
 
 def page_content() -> rx.Component:
@@ -16,13 +17,43 @@ def page_content() -> rx.Component:
             width="100%"
         ),
         header(),
+        rx.image(
+            src=utils.WEB_LOGO,
+            width="100%",
+            max_width="5.5em",
+            height="auto",
+        ),
         title("Descarga y obtén información de la música que te gusta"),
         rx.text(
-            "Primero añade el enlace de la canción",
+            "Fuentes de música soportados:",
             font_size=styles.FontSize.BIG.value,
             text_align="center",
             margin_bottom="1em",
+        ),
+        rx.stack(
+            rx.link(
+                rx.image(
+                    src=utils.YOUTUBE_ICON,
+                    width="6em",
+                    height="auto",
+                ),
+                href=f"{Route.YOUTUBE_DOWNLOAD.value}",
+                style=styles.icon_link_style
             ),
+            rx.link(
+                rx.image(
+                    src=utils.SPOTIFY_ICON,
+                    width="6em",
+                    height="auto",
+                ),
+                href=f"{Route.YOUTUBE_DOWNLOAD.value}",
+                style=styles.icon_link_style
+            ),
+            align="center",
+            direction="row",
+            width="max-content",
+            heigth="100%",
+        ),
         footer(),
         background_color=Color.BG_PRIMARY.value,
         width="100%",
@@ -36,7 +67,7 @@ def page_content() -> rx.Component:
     #on_load=ManageYoutubeApi.getYoutubeInfo
 )
 def main_page() -> rx.Component:
-    return rx.fragment(
+    return rx.box(
         rx.tablet_and_desktop(
              rx.grid(
                 sidebar_cond(),

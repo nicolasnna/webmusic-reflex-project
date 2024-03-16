@@ -1,6 +1,6 @@
 import reflex as rx
 from webmusic.views.sidebar import sidebar_cond, sidebar_shortened
-from webmusic.components.card_info import card_info_cond
+from webmusic.components.card_info_yt import card_info_cond
 from webmusic.components.footer import footer
 from webmusic.components.input_link import input_link
 from webmusic.components.title import title
@@ -61,7 +61,7 @@ def page_content() -> rx.Component:
              ManageYoutubeApi.getYoutubeInfo,
              ManageYoutubeApi.getYoutubeMp3]
 )
-def youtube_info_page() -> rx.Component:
+def youtube_download_page() -> rx.Component:
     return rx.fragment(
         rx.tablet_and_desktop(
              rx.grid(

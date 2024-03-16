@@ -14,3 +14,9 @@ HEADERS_YT_DOWN = {
     "X-RapidAPI-Key": os.getenv('RAPIDAPI_KEY'),
     "X-RapidAPI-Host": "youtube-mp36.p.rapidapi.com"
 }
+
+URL_SPOTIFY_DOWN = "https://spotify-downloader6.p.rapidapi.com/spotify"
+HEADERS_SPOTIFY_DOWN = {
+    "X-RapidAPI-Key": os.getenv('RAPIDAPI_KEY'),
+    "X-RapidAPI-Host": "spotify-downloader6.p.rapidapi.com"
+}

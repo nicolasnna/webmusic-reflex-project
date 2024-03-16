@@ -46,7 +46,7 @@ def page_content() -> rx.Component:
                     width="6em",
                     height="auto",
                 ),
-                href=f"{Route.YOUTUBE_DOWNLOAD.value}",
+                href=f"{Route.SPOTIFY_DOWNLOAD.value}",
                 style=styles.icon_link_style
             ),
             align="center",

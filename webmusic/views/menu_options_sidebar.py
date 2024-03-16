@@ -25,7 +25,8 @@ def menu_options_sidebar() -> rx.Component:
             width_botton="100%",
             width_link="100%"
         ),
-        select_options("segunda opcion","/",
+        select_options("segunda opcion",
+            f"{Route.SPOTIFY_DOWNLOAD.value}",
             width_botton="100%",
             width_link="100%"),
         select_options("tercera opcion","/",
@@ -57,7 +58,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
                 width="2.5em",
                 height="auto",
                 ),
-            "/",
+            f"{Route.SPOTIFY_DOWNLOAD.value}",
             width_botton="max-content",
             width_link="max-content"),
         select_options(

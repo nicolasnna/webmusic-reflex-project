@@ -1,4 +1,3 @@
-
 YOUTUBE_ICON = "/youtube_icon.png"
 SPOTIFY_ICON = "/spotify_icon.png"
 

@@ -1,12 +1,12 @@
 import reflex as rx
 from webmusic.views.sidebar import sidebar_cond, sidebar_shortened
-from webmusic.components.card_info_yt import card_info_cond
+from webmusic.components.card_info_spotify import card_info_spotify
 from webmusic.components.footer import footer
 from webmusic.components.input_link import input_link
 from webmusic.components.title import title
 from webmusic.components.header import header
 from webmusic.styles.colors import Color
-from webmusic.api.manage_yt_apis import ManageYoutubeApi
+from webmusic.api.manage_spotify_apis import ManageSpotifyApi
 from webmusic.api.state_components import StateComponents
 from webmusic.routes import Route
 import webmusic.styles.styles as styles
@@ -21,12 +21,12 @@ def page_content() -> rx.Component:
         ),
         header(),
         rx.image(
-            src=utils.YOUTUBE_ICON,
+            src=utils.SPOTIFY_ICON,
             width="100%",
             max_width="5.5em",
             height="auto",
         ),
-        title("Descarga tus músicas preferidas en MP3 desde Youtube"),
+        title("Descarga tus músicas preferidas en MP3 desde Spotify"),
         rx.text(
             "Primero añade el enlace de la canción",
             font_size=styles.FontSize.BIG.value,
@@ -34,8 +34,8 @@ def page_content() -> rx.Component:
             margin_bottom="1em",
         ),
         input_link(
-            ManageYoutubeApi.get_id_from_url_and_redirect, 
-            ManageYoutubeApi.set_url,
+            rx.console_log(ManageSpotifyApi.getDataSpotifyDownload), 
+            ManageSpotifyApi.set_url,
             "Pega el enlace aquí*"
         ),
         rx.text(
@@ -44,10 +44,7 @@ def page_content() -> rx.Component:
             text_align="center",
             margin_bottom="1em",
         ),
-        card_info_cond(
-            ManageYoutubeApi.data_info, 
-            ManageYoutubeApi.data_download  
-        ),
+        card_info_spotify(ManageSpotifyApi.data_download),
         footer(),
         background_color=Color.BG_PRIMARY.value,
         width="100%",
@@ -56,12 +53,12 @@ def page_content() -> rx.Component:
 
 
 @rx.page(
-    route=f"{Route.YOUTUBE_DOWNLOAD.value}",
+    route=f"{Route.SPOTIFY_DOWNLOAD.value}/[type]/[id]",
     title='WebMusic', 
-    on_load=[StateComponents.change_card_info(True), 
-             ManageYoutubeApi.create_blank_template]
+    on_load=[StateComponents.change_card_info(False),
+             ManageSpotifyApi.getSpotifyDownload]
 )
-def youtube_page() -> rx.Component:
+def spotify_download_page() -> rx.Component:
     return rx.fragment(
         rx.tablet_and_desktop(
              rx.grid(

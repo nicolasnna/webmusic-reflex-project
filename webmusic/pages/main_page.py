@@ -54,6 +54,9 @@ def page_content() -> rx.Component:
             width="max-content",
             heigth="100%",
         ),
+        # BORRAR EN CASO DE AÑADIR ALGO MÁS
+        rx.box(height="15vh"),
+        #
         footer(),
         background_color=Color.BG_PRIMARY.value,
         width="100%",

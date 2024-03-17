@@ -25,7 +25,19 @@ def menu_options_sidebar() -> rx.Component:
             width_botton="100%",
             width_link="100%"
         ),
-        select_options("segunda opcion",
+        select_options(rx.hstack(
+                rx.image(
+                    src=utils.SPOTIFY_ICON,
+                    width="100%",
+                    max_width="2.5em",
+                    height="auto",
+                ),
+                rx.text(
+                    "Descargar desde Spotify",
+                    font_size=styles.FontSize.BIG.value,
+                    color=Color.TEXT_PRIMARY.value,
+                ),
+            ),
             f"{Route.SPOTIFY_DOWNLOAD.value}",
             width_botton="100%",
             width_link="100%"),

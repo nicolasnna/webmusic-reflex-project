@@ -4,6 +4,7 @@ import os
 load_dotenv()
 
 URL_YT_INFO = "https://youtube-search-and-download.p.rapidapi.com/video"
+URL_YT_INFO_PLAYLIST = "https://youtube-search-and-download.p.rapidapi.com/playlist"
 HEADERS_YT_INFO = {
     "X-RapidAPI-Key": os.getenv('RAPIDAPI_KEY'),
     "X-RapidAPI-Host": "youtube-search-and-download.p.rapidapi.com"

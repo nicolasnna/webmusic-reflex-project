@@ -88,7 +88,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
                 width="2.5em",
                 height="auto",
                 ),
-            "/",
+            f"{Route.YOUTUBE_PLAYLIST.value}",
             width_botton="max-content",
             width_link="max-content",
             ),

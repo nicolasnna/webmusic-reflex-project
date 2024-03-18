@@ -33,7 +33,7 @@ def card_content(data_info: YoutubeInfoData, data_download: YoutubeDownloadData)
                 ),
                 rx.hover_card.content(
                     rx.text(
-                        "Solo se reconoce canciones individuales, las playlist se omiten",
+                        "En caso de no poder estimar el tamaño del archivo, se mostrará 0b",
                         font_size=styles.FontSize.DEFAULT.value,
                         text_align="center",
                         color=Color.TEXT_SECONDARY.value,
@@ -69,7 +69,7 @@ def card_content(data_info: YoutubeInfoData, data_download: YoutubeDownloadData)
         ), 
     )
 
-def card_info_cond(data_info: rx.Base, data_download: rx.Base) -> rx.Component:
+def card_info_cond(data_info: YoutubeInfoData, data_download: YoutubeDownloadData) -> rx.Component:
     return rx.cond(
         StateComponents.show_card_info,
         rx.fragment(

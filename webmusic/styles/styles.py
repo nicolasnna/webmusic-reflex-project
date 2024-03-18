@@ -19,11 +19,12 @@ class FontSize(Enum):
 
 
 button_menu_style = dict(
-    width="100%",
+    width="max-content",
     height="100%",
     border_radius=Size.SMALL.value,
     font_size=FontSize.SMALL.value,
-    padding=Size.SMALLEST.value,
+    padding_y=Size.SMALLEST.value,
+    padding_x=Size.DEFAULT.value,
     background_color=Color.BG_TERCERARY.value,
     border=f"1px solid {Color.BG_PRIMARY.value}",
     color=Color.TEXT_PRIMARY.value,
@@ -84,7 +85,7 @@ icon_link_style = dict(
     bg=Color.TEXT_PRIMARY.value,
     padding="0.5em",
     _hover={
-        "bg": Color.GRADIENT_SECONDARY.value,   
+        "bg": Color.GRADIENT_SECONDARY.value, 
     }
 )
 

@@ -32,11 +32,16 @@ class ManageSpotifyApi(rx.State):
         Extract the type and id content from the URL and redirect for download
         '''
         split_list = re.split("/",self.url)
+        
         if re.search('\?',split_list[len(split_list)-1]) != None:
             self.data_download.id = split_list[len(split_list)-1]
         else:
             end = re.search("\?",split_list[len(split_list)-1])
             self.data_download.id = split_list[len(split_list)-1][0:end]
+
+        if split_list[len(split_list)-2] != 'track':
+            return rx.window_alert("No se ha ingresado el enlace de una canción de Spotify")
+        
         self.data_download.type = split_list[len(split_list)-2]
         self.data_download.url_song = self.url
 
@@ -82,7 +87,7 @@ class ManageSpotifyApi(rx.State):
 
             if self.msg_response == None:
                 return [StateComponents.change_card_info(False),
-                        rx.window_alert("No se ha encontrado el video de Youtube")]
+                        rx.window_alert("No se ha encontrado la canción de Spotify")]
             else:
                 self._json_spotify_down_to_data_down()
                 return StateComponents.change_card_info(True)

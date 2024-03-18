@@ -1,6 +1,6 @@
 import reflex as rx
 from webmusic.views.sidebar import sidebar_cond, sidebar_shortened
-from webmusic.views.card_info_yt import card_info_cond
+from webmusic.views.card_info_yt_playlist import card_info_playlist
 from webmusic.components.footer import footer
 from webmusic.components.input_link import input_link
 from webmusic.components.title import title
@@ -28,25 +28,27 @@ def page_content() -> rx.Component:
         ),
         title("Descarga tus músicas preferidas en MP3 desde Youtube"),
         rx.text(
-            "Primero añade el enlace de la canción",
+            "Primero añade el enlace de la playlist",
             font_size=styles.FontSize.BIG.value,
             text_align="center",
             margin_bottom="1em",
         ),
         input_link(
-            ManageYoutubeApi.get_id_from_url_and_redirect, 
+            ManageYoutubeApi.get_id_playlist_from_url_and_redirect, 
             ManageYoutubeApi.set_url,
             "Pega el enlace aquí*"
         ),
         rx.text(
-            "*(Solo se reconoce canciones individuales, las playlist se omiten)",
+            "*(Solo se reconoce playlist creadas por usuarios, no las generadas automáticamente)",
             font_size=styles.FontSize.SMALL.value,
             text_align="center",
             margin_bottom="1em",
         ),
-        card_info_cond(
-            ManageYoutubeApi.data_info, 
-            ManageYoutubeApi.data_download  
+        card_info_playlist(
+            ManageYoutubeApi.data_playlist,
+            show_song_playlist=False,
+            data_info=ManageYoutubeApi.data_info,
+            data_download=ManageYoutubeApi.data_download,
         ),
         footer(),
         background_color=Color.BG_PRIMARY.value,
@@ -56,12 +58,12 @@ def page_content() -> rx.Component:
 
 
 @rx.page(
-    route=f"{Route.YOUTUBE_DOWNLOAD.value}",
+    route=f"{Route.YOUTUBE_PLAYLIST.value}",
     title='WebMusic', 
     on_load=[StateComponents.change_card_info(True), 
              ManageYoutubeApi.create_blank_template]
 )
-def youtube_page() -> rx.Component:
+def youtube_playlist_page() -> rx.Component:
     return rx.fragment(
         rx.tablet_and_desktop(
              rx.grid(

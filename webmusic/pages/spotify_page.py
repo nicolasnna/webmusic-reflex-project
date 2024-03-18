@@ -1,6 +1,6 @@
 import reflex as rx
 from webmusic.views.sidebar import sidebar_cond, sidebar_shortened
-from webmusic.components.card_info_spotify import card_info_spotify
+from webmusic.views.card_info_spotify import card_info_spotify
 from webmusic.components.footer import footer
 from webmusic.components.input_link import input_link
 from webmusic.components.title import title

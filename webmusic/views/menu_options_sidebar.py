@@ -16,12 +16,12 @@ def menu_options_sidebar() -> rx.Component:
                     height="auto",
                 ),
                 rx.text(
-                    "Descargar desde Youtube",
+                    "Descargar canciones",
                     font_size=styles.FontSize.BIG.value,
                     color=Color.TEXT_PRIMARY.value,
                 ),
             ),
-            f"{Route.YOUTUBE_DOWNLOAD.value}",
+            Route.YOUTUBE_DOWNLOAD.value,
             width_botton="100%",
             width_link="100%"
         ),
@@ -33,18 +33,46 @@ def menu_options_sidebar() -> rx.Component:
                     height="auto",
                 ),
                 rx.text(
-                    "Descargar desde Spotify",
+                    "Descargar canciones",
                     font_size=styles.FontSize.BIG.value,
                     color=Color.TEXT_PRIMARY.value,
                 ),
             ),
-            f"{Route.SPOTIFY_DOWNLOAD.value}",
+            Route.SPOTIFY_DOWNLOAD.value,
             width_botton="100%",
             width_link="100%"),
-        select_options("tercera opcion","/",
+        select_options(
+            rx.hstack(
+                rx.image(
+                    src=utils.YOUTUBE_ICON,
+                    width="100%",
+                    max_width="2.5em",
+                    height="auto",
+                ),
+                rx.text(
+                    "Descargar playlist",
+                    font_size=styles.FontSize.BIG.value,
+                    color=Color.TEXT_PRIMARY.value,
+                ),
+            ),
+            Route.YOUTUBE_DOWNLOAD.value,
             width_botton="100%",
-            width_link="100%"),
-        select_options("cuarta opcion","/",
+            width_link="100%"
+        ),
+        select_options(rx.hstack(
+                rx.image(
+                    src=utils.SPOTIFY_ICON,
+                    width="100%",
+                    max_width="2.5em",
+                    height="auto",
+                ),
+                rx.text(
+                    "Descargar playlist",
+                    font_size=styles.FontSize.BIG.value,
+                    color=Color.TEXT_PRIMARY.value,
+                ),
+            ),
+            Route.SPOTIFY_PLAYLIST.value,
             width_botton="100%",
             width_link="100%"),
         align_items="left",
@@ -61,7 +89,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
                 width="2.5em",
                 height="auto",
                 ),
-            f"{Route.YOUTUBE_DOWNLOAD.value}",
+            Route.YOUTUBE_DOWNLOAD.value,
             width_botton="max-content",
             width_link="max-content"),
         select_options(
@@ -70,16 +98,7 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
                 width="2.5em",
                 height="auto",
                 ),
-            f"{Route.SPOTIFY_DOWNLOAD.value}",
-            width_botton="max-content",
-            width_link="max-content"),
-        select_options(
-            rx.image(
-                src=utils.SPOTIFY_ICON,
-                width="2.5em",
-                height="auto",
-                ),
-            "/",
+            Route.SPOTIFY_DOWNLOAD.value,
             width_botton="max-content",
             width_link="max-content"),
         select_options(
@@ -88,10 +107,20 @@ def menu_options_sidebar_shortened(direction_option: str) -> rx.Component:
                 width="2.5em",
                 height="auto",
                 ),
-            f"{Route.YOUTUBE_PLAYLIST.value}",
+            Route.YOUTUBE_PLAYLIST.value,
             width_botton="max-content",
             width_link="max-content",
-            ),
+        ),
+        select_options(
+            rx.image(
+                src=utils.SPOTIFY_ICON,
+                width="2.5em",
+                height="auto",
+                ),
+            Route.SPOTIFY_PLAYLIST.value,
+            width_botton="max-content",
+            width_link="max-content"
+        ),
         align_items="center",
         spacing="3",
         width="max-content",

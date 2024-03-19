@@ -16,7 +16,7 @@ def card_content(data_info: YoutubeInfoData, data_download: YoutubeDownloadData)
         ),
         rx.hstack(
             rx.text(
-                "Contador de visitas: ",
+                "Visitas: ",
                 rx.text.strong(f"{data_info.view_count}"),
                 style=styles.text_info_style,
                 height="100%",

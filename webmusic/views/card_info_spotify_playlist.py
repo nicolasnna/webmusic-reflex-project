@@ -2,22 +2,20 @@ import reflex as rx
 import webmusic.styles.styles as styles
 from webmusic.styles.colors import Color
 from webmusic.api.state_components import StateComponents
-from webmusic.model.yt_info import YoutubeInfoData
-from webmusic.model.yt_download import YoutubeDownloadData
-from webmusic.model.yt_info_playlist import YoutubeInfoPlaylistData
+from webmusic.model.spotify_download import SpotifyDownloadData
+from webmusic.model.spotify_playlist import SpotifyPlaylistData
 from ..components.button_style import button_style
-from webmusic.api.manage_yt_apis import ManageYoutubeApi
+from webmusic.api.manage_spotify_apis import ManageSpotifyApi
 
-def card_content(data_playlist: YoutubeInfoPlaylistData, 
+def card_content(data_playlist: SpotifyPlaylistData, 
                  show_song_playlist: bool,
-                 data_info: YoutubeInfoData,
-                 data_download: YoutubeDownloadData) -> rx.Component:
+                 data_download: SpotifyDownloadData) -> rx.Component:
     return rx.vstack(
         # Playlist Content
         rx.hstack(
             rx.text(
-                "Visitas: ",
-                rx.text.strong(f"{data_playlist.view_playlist}"),
+                "Seguidores ",
+                rx.text.strong(f"{data_playlist.followers}"),
                 style=styles.text_info_style,
                 height="100%",
             ),
@@ -25,8 +23,8 @@ def card_content(data_playlist: YoutubeInfoPlaylistData,
             rx.hover_card.root(
                 rx.hover_card.trigger(
                     rx.text(
-                        "Total de videos: ",
-                        rx.text.strong(f"{data_playlist.videos_count}"),
+                        "Total de canciones: ",
+                        rx.text.strong(f"{data_playlist.total_song}"),
                         style=styles.text_info_style,
                         height="100%"
                     ), 
@@ -55,24 +53,24 @@ def card_content(data_playlist: YoutubeInfoPlaylistData,
                     button_style(
                         "Anterior",
                         "arrow-left",
-                        ManageYoutubeApi.get_previous_playlist_song,
+                        ManageSpotifyApi.get_previous_playlist_song,
                         position_left=True
                     ),
                     rx.text(
-                        f"Canción {data_playlist.item_number_current} / {data_playlist.videos_count}",
+                        f"Canción {data_playlist.current_number_song} / {data_playlist.total_song}",
                         style=styles.text_info_style,
                         height="100%"
                     ),
                     button_style(
                         "Siguiente",
                         "arrow-right",
-                        ManageYoutubeApi.get_next_playlist_song,
+                        ManageSpotifyApi.get_next_playlist_song,
                         position_left=False
                     ),
                 ),
                 # Title Song
                 rx.heading(
-                    data_info.title,
+                    data_download.title,
                     font_size=styles.FontSize.BIGGEST.value,
                     height="max-content",
                     padding_y="0.5em",
@@ -81,30 +79,10 @@ def card_content(data_playlist: YoutubeInfoPlaylistData,
                 # Info Song
                 rx.hstack(
                     rx.text(
-                        "Canal: ",
-                        rx.text.strong(f"{data_info.author}"),
+                        "Artista: ",
+                        rx.text.strong(data_download.author),
                         style=styles.text_info_style,
                         height="100%",
-                    ),
-                    rx.spacer(),
-                    rx.hover_card.root(
-                        rx.hover_card.trigger(
-                            rx.text(
-                                "Peso del archivo: ",
-                                rx.text.strong(f"{data_download.file_size} {data_download.format_size}"),
-                                style=styles.text_info_style,
-                                height="100%"
-                            ), 
-                        ),
-                        rx.hover_card.content(
-                            rx.text(
-                                "En caso de no poder estimar el tamñano del archivo, se mostrará 0b",
-                                font_size=styles.FontSize.DEFAULT.value,
-                                text_align="center",
-                                color=Color.TEXT_SECONDARY.value,
-                                margin_bottom="1em",
-                            ),
-                        ),
                     ),
                 ),
                 # Download Button
@@ -123,7 +101,7 @@ def card_content(data_playlist: YoutubeInfoPlaylistData,
                         )
                     ),
                     on_click=rx.download(
-                        url=data_download.link,
+                        url=data_download.link_download,
                         filename=data_download.title,
                     ),
                     style=styles.button_menu_style,
@@ -139,16 +117,15 @@ def card_content(data_playlist: YoutubeInfoPlaylistData,
             button_style(
                 "Revisar canciones",
                 "arrow-right",
-                ManageYoutubeApi.get_id_song_from_playlist,
+                ManageSpotifyApi.get_id_song_from_playlist,
                 position_left=False
             ),
         ),
     )
 
-def card_info_playlist(data_playlist: YoutubeInfoPlaylistData, 
-                       show_song_playlist: bool,
-                       data_info: YoutubeInfoData,
-                       data_download: YoutubeDownloadData) -> rx.Component:
+def card_info_playlist_spotify(data_playlist: SpotifyPlaylistData, 
+                 show_song_playlist: bool,
+                 data_download: SpotifyDownloadData) -> rx.Component:
     return rx.cond(
         StateComponents.show_card_info,
         rx.fragment(
@@ -160,14 +137,14 @@ def card_info_playlist(data_playlist: YoutubeInfoPlaylistData,
                         show_song_playlist,
                         # Cond True
                         rx.image(
-                            src=data_info.img_src,
+                            src=data_download.image,
                             width="480px",
                             height="auto",
                             padding=styles.Size.BIG.value,
                         ),
                         # Cond False
                         rx.image(
-                            src=data_playlist.image_playlist,
+                            src=data_playlist.img_playlist,
                             width="480px",
                             height="auto",
                             padding=styles.Size.BIG.value,
@@ -176,13 +153,13 @@ def card_info_playlist(data_playlist: YoutubeInfoPlaylistData,
                     # Content Song
                     rx.grid(
                         rx.heading(
-                            data_playlist.title_playlist,
+                            data_playlist.title,
                             font_size=styles.FontSize.BIGGEST.value,
                             height="max-content",
                             padding_y="0.5em",
                             align="center"
                         ),
-                        card_content(data_playlist,show_song_playlist,data_info,data_download),
+                        card_content(data_playlist,show_song_playlist, data_download),
                         padding_x=styles.Size.DEFAULT.value,
                         padding_y=styles.Size.BIGGEST.value,
                         margin_x=styles.Size.BIGGEST.value,
@@ -203,7 +180,7 @@ def card_info_playlist(data_playlist: YoutubeInfoPlaylistData,
                 rx.vstack(
                     # Title Song
                     rx.heading(
-                        data_playlist.title_playlist,
+                        data_playlist.title,
                         font_size=styles.FontSize.BIGGEST.value,
                         height="max-content",
                         padding_bottom="0.5em"
@@ -213,20 +190,20 @@ def card_info_playlist(data_playlist: YoutubeInfoPlaylistData,
                         show_song_playlist,
                         # Cond True
                         rx.image(
-                            src=data_info.img_src,
+                            src=data_download.image,
                             width="480px",
                             height="auto",
                             padding=styles.Size.BIG.value,
                         ),
                         #Cond False
                         rx.image(
-                            src=data_playlist.image_playlist,
+                            src=data_playlist.img_playlist,
                             width="480px",
                             height="auto",
                             padding=styles.Size.BIG.value,
                         ),
                     ),
-                    card_content(data_playlist,show_song_playlist,data_info,data_download),
+                    card_content(data_playlist,show_song_playlist,data_download),
                     width="100%",
                     height="100%",
                     padding_x=styles.Size.DEFAULT.value,

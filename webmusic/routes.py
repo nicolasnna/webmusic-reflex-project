@@ -5,3 +5,4 @@ class Route(Enum):
     YOUTUBE_DOWNLOAD = "/yt_download"
     YOUTUBE_PLAYLIST = "/yt_playlist"
     SPOTIFY_DOWNLOAD = "/spotify_download"
+    SPOTIFY_PLAYLIST = "/spotify_playlist"

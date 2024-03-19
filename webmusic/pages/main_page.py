@@ -23,9 +23,10 @@ def page_content() -> rx.Component:
             max_width="5.5em",
             height="auto",
         ),
-        title("Descarga y obtén información de la música que te gusta"),
+        title("Busca y descarga la música que te gusta"),
+        # Download song
         rx.text(
-            "Fuentes de música soportados:",
+            "Busqueda por canciones individuales:",
             font_size=styles.FontSize.BIG.value,
             text_align="center",
             margin_bottom="1em",
@@ -54,9 +55,42 @@ def page_content() -> rx.Component:
             width="max-content",
             heigth="100%",
         ),
-        # BORRAR EN CASO DE AÑADIR ALGO MÁS
-        rx.box(height="15vh"),
-        #
+        # Download playlist
+        rx.text(
+            "Busqueda por playlist:",
+            font_size=styles.FontSize.BIG.value,
+            text_align="center",
+            margin_bottom="1em",
+            margin_top="2em",
+        ),
+        rx.stack(
+            rx.link(
+                rx.image(
+                    src=utils.YOUTUBE_ICON,
+                    width="6em",
+                    height="auto",
+                ),
+                href=f"{Route.YOUTUBE_PLAYLIST.value}",
+                style=styles.icon_link_style
+            ),
+            rx.link(
+                rx.image(
+                    src=utils.SPOTIFY_ICON,
+                    width="6em",
+                    height="auto",
+                ),
+                href=f"{Route.SPOTIFY_PLAYLIST.value}",
+                style=styles.icon_link_style
+            ),
+            align="center",
+            direction="row",
+            width="max-content",
+            heigth="100%",
+        ),
+
+        # # BORRAR EN CASO DE AÑADIR ALGO MÁS
+        # rx.box(height="15vh"),
+        # #
         footer(),
         background_color=Color.BG_PRIMARY.value,
         width="100%",

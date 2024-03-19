@@ -14,7 +14,7 @@ def card_content(data_download: SpotifyDownloadData) -> rx.Component:
             padding_y="0.4em",
         ),
         rx.text(
-            "Tipo de contenido: ",
+            "Tipo: ",
             rx.text.strong(f"{data_download.type}"),
             style=styles.text_info_style,
             heihgt="100%",

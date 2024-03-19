@@ -21,3 +21,10 @@ HEADERS_SPOTIFY_DOWN = {
     "X-RapidAPI-Key": os.getenv('RAPIDAPI_KEY'),
     "X-RapidAPI-Host": "spotify-downloader6.p.rapidapi.com"
 }
+
+URL_SPOTIFY_PLAYLIST_INFO = "https://spotify23.p.rapidapi.com/playlist/"
+URL_SPOTIFY_PLAYLIST = "https://spotify23.p.rapidapi.com/playlist_tracks/"
+HEADERS_SPOTIFY_PLAYLIST = {
+	"X-RapidAPI-Key": os.getenv('RAPIDAPI_KEY'),
+	"X-RapidAPI-Host": "spotify23.p.rapidapi.com"
+}

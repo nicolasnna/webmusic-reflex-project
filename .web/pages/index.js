@@ -14,151 +14,7 @@ import NextHead from "next/head"
 
 
 
-export function Link_f13bf4124820068967bcf93ddf2abe60 () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
-  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Fragment_1951457ffdfa9972621b7e3900e6ed90 () {
-  const state__state_components = useContext(StateContexts.state__state_components)
-
-
-  return (
-    <Fragment>
-  {isTrue(state__state_components.extend_sidebar) ? (
-  <Fragment>
-  <LucideArrowLeftToLineIcon css={{"color": "var(--current-color)", "width": "3em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
-</Fragment>
-) : (
-  <Fragment>
-  <LucideArrowRightToLineIcon css={{"color": "var(--current-color)", "width": "3em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
-</Fragment>
-)}
-</Fragment>
-  )
-}
-
-export function Link_946febab9167efbee47da7ba55649224 () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "max-content", "heihgt": "100%", "marginInlineStart": "0.5em", "marginInlineEnd": "0.5em"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
-  <RadixThemesFlex align={`start`} css={{"marginBottom": "0.5em", "alignItems": "center"}} direction={`column`} gap={`2`}>
-  <RadixThemesAvatar css={{"width": "2.5em", "height": "auto"}} src={`/auriculares.ico`}/>
-</RadixThemesFlex>
-  <Box sx={{"marginTop": "2em", "marginBottom": "2em", "display": ["none", "block", "block", "block"]}}/>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Grid_6487a1514008bdea4ec89a8931239764 () {
-  const state__state_components = useContext(StateContexts.state__state_components)
-
-
-  return (
-    <RadixThemesGrid css={{"gridTemplateColumns": state__state_components.grid_sidebar, "width": "100%", "height": "100%"}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`column`} gap={`2`}>
-  <Fragment_421656a4b56676d1b83690beb2148b69/>
-</RadixThemesFlex>
-  <RadixThemesFlex align={`start`} css={{"backgroundColor": "#c8d7fd", "width": "100%", "alignItems": "center"}} direction={`column`} gap={`0`}>
-  <Box sx={{"width": "100%", "display": ["block", "none", "none", "none"]}}>
-  <RadixThemesFlex align={`start`} css={{"align": "center", "height": "100%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "width": "100%", "backgroundColor": "#373de1", "zIndex": "5", "alignItems": "center"}} direction={`row`} gap={`2`}>
-  <Link_946febab9167efbee47da7ba55649224/>
-  <Box sx={{"heihgt": "100%", "gap": "2.5em", "display": ["block", "none", "none", "none"]}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "max-content", "height": "100%", "paddingInlineStart": "0.4em", "paddingInlineEnd": "0.4em"}} direction={`row`} gap={`3`}>
-  <Link_529fceb6f16c5fe6bdad4a56826e1f34/>
-  <Link_09572dd4d4b0b33b82cd83d486d68d63/>
-  <Link_f13bf4124820068967bcf93ddf2abe60/>
-  <Link_95505b8b354dbb4e47797d91af82bc0e/>
-</RadixThemesFlex>
-</Box>
-  <Box sx={{"height": "100%", "gap": "1.5em", "display": ["none", "block", "block", "block"]}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "max-content", "height": "100%", "paddingInlineStart": "0.4em", "paddingInlineEnd": "0.4em"}} direction={`column`} gap={`3`}>
-  <Link_529fceb6f16c5fe6bdad4a56826e1f34/>
-  <Link_09572dd4d4b0b33b82cd83d486d68d63/>
-  <Link_f13bf4124820068967bcf93ddf2abe60/>
-  <Link_95505b8b354dbb4e47797d91af82bc0e/>
-</RadixThemesFlex>
-</Box>
-</RadixThemesFlex>
-</Box>
-  <RadixThemesFlex align={`start`} css={{"textAlign": "center", "width": "100%", "backgroundColor": "#6474f0", "marginBottom": "1em", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "alignItems": "center"}} direction={`row`} gap={`2`}>
-  <Button_ef1f5be29ad91e4fe886874f258cfc5d/>
-  <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
-  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "marginLeft": "2em", "textAlign": "center"}}>
-  {`Web Music`}
-</RadixThemesHeading>
-  <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
-  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "textAlign": "center"}}>
-  {`Nicolás NA`}
-</RadixThemesHeading>
-</RadixThemesFlex>
-  <img css={{"width": "100%", "maxWidth": "5.5em", "height": "auto"}} src={`/auriculares.ico`}/>
-  <RadixThemesHeading css={{"paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "marginBottom": "1em", "fontSize": "200%", "color": "#1b1c4b", "textShadow": "4px 4px 4px #8298f7", "textAlign": "center"}}>
-  {`Descarga y obtén información de la música que te gusta`}
-</RadixThemesHeading>
-  <RadixThemesText as={`p`} css={{"fontSize": "120%", "textAlign": "center", "marginBottom": "1em", "color": "#1b1c4b"}}>
-  {`Fuentes de música soportados:`}
-</RadixThemesText>
-  <RadixThemesFlex align={`center`} css={{"width": "max-content", "heigth": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
-  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
-  <NextLink href={`/yt_download`} passHref={true}>
-  <img css={{"width": "6em", "height": "auto"}} src={`/youtube_icon.png`}/>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
-  <NextLink href={`/spotify_download`} passHref={true}>
-  <img css={{"width": "6em", "height": "auto"}} src={`/spotify_icon.png`}/>
-</NextLink>
-</RadixThemesLink>
-</RadixThemesFlex>
-  <RadixThemesBox css={{"height": "15vh"}}/>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "max-content", "backgroundColor": "#6474f0", "paddingTop": "1.5em", "paddingBottom": "0.4em", "marginTop": "5em", "alignItems": "center"}} direction={`column`} gap={`0`}>
-  <RadixThemesAvatar css={{"width": "3em", "height": "3em", "border": "3px solid #8298f7", "padding": "0.2em", "background": "#c8d7fd"}} src={`/auriculares.ico`}/>
-  <RadixThemesText align={`center`} as={`p`} css={{"marginTop": "0.6em", "color": "#eef4ff", "fontSize": "80%"}}>
-  {`Esta página ha sido desarrollada por fines educativos.`}
-</RadixThemesText>
-  <RadixThemesText align={`center`} as={`p`} css={{"color": "#eef4ff", "fontSize": "80%"}}>
-  {`Nicolás Norambena Alarcón. 2024`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesGrid>
-  )
-}
-
-export function Fragment_966c0378eb9d65bdfb5286644be9b831 () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-  const state = useContext(StateContexts.state)
-
-
-  return (
-    <Fragment>
-  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
-  <Fragment>
-  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
-  {`wifi_off`}
-</LucideWifiOffIcon>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
-
-export function Fragment_421656a4b56676d1b83690beb2148b69 () {
+export function Fragment_134907248acd534d21a8514f973d9e83 () {
   const state__state_components = useContext(StateContexts.state__state_components)
 
 
@@ -184,7 +40,7 @@ export function Fragment_421656a4b56676d1b83690beb2148b69 () {
   <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`row`} gap={`2`}>
   <img css={{"width": "100%", "maxWidth": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
   <RadixThemesText as={`p`} css={{"fontSize": "120%", "color": "#eef4ff"}}>
-  {`Descargar desde Youtube`}
+  {`Descargar canciones`}
 </RadixThemesText>
 </RadixThemesFlex>
 </RadixThemesButton>
@@ -196,23 +52,33 @@ export function Fragment_421656a4b56676d1b83690beb2148b69 () {
   <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`row`} gap={`2`}>
   <img css={{"width": "100%", "maxWidth": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
   <RadixThemesText as={`p`} css={{"fontSize": "120%", "color": "#eef4ff"}}>
-  {`Descargar desde Spotify`}
+  {`Descargar canciones`}
 </RadixThemesText>
 </RadixThemesFlex>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
   <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
+  <NextLink href={`/yt_download`} passHref={true}>
   <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  {`tercera opcion`}
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`row`} gap={`2`}>
+  <img css={{"width": "100%", "maxWidth": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
+  <RadixThemesText as={`p`} css={{"fontSize": "120%", "color": "#eef4ff"}}>
+  {`Descargar playlist`}
+</RadixThemesText>
+</RadixThemesFlex>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
   <RadixThemesLink asChild={true} css={{"width": "100%"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
+  <NextLink href={`/spotify_playlist`} passHref={true}>
   <RadixThemesButton css={{"width": "100%", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  {`cuarta opcion`}
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`row`} gap={`2`}>
+  <img css={{"width": "100%", "maxWidth": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
+  <RadixThemesText as={`p`} css={{"fontSize": "120%", "color": "#eef4ff"}}>
+  {`Descargar playlist`}
+</RadixThemesText>
+</RadixThemesFlex>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
@@ -247,16 +113,16 @@ export function Fragment_421656a4b56676d1b83690beb2148b69 () {
 </NextLink>
 </RadixThemesLink>
   <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
+  <NextLink href={`/yt_playlist`} passHref={true}>
   <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
   <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/yt_playlist`} passHref={true}>
+  <NextLink href={`/spotify_playlist`} passHref={true}>
   <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
@@ -279,16 +145,16 @@ export function Fragment_421656a4b56676d1b83690beb2148b69 () {
 </NextLink>
 </RadixThemesLink>
   <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/`} passHref={true}>
+  <NextLink href={`/yt_playlist`} passHref={true}>
   <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
   <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/yt_playlist`} passHref={true}>
+  <NextLink href={`/spotify_playlist`} passHref={true}>
   <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
 </RadixThemesButton>
 </NextLink>
 </RadixThemesLink>
@@ -298,6 +164,233 @@ export function Fragment_421656a4b56676d1b83690beb2148b69 () {
 </Fragment>
 )}
 </Fragment>
+  )
+}
+
+export function Link_09572dd4d4b0b33b82cd83d486d68d63 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/spotify_download`} passHref={true}>
+  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_e23961e25729849a0585ab2c0c5ff7f8 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/spotify_playlist`} passHref={true}>
+  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Fragment_966c0378eb9d65bdfb5286644be9b831 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+  const state = useContext(StateContexts.state)
+
+
+  return (
+    <Fragment>
+  {isTrue(((!state.is_hydrated) || (connectErrors.length > 0))) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "30px", "right": "30px", "animation": `${pulse} 1s infinite`}} size={32}>
+  {`wifi_off`}
+</LucideWifiOffIcon>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
+
+export function Button_ef1f5be29ad91e4fe886874f258cfc5d () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+  const on_click_9454e5c339d1838425daf0a7e41cb849 = useCallback((_e) => addEvents([Event("state.state_components.change_sidebar", {})], (_e), {}), [addEvents, Event])
+
+  return (
+    <RadixThemesButton css={{"backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "padding": "0.4em", "width": "max-content", "heihgt": "max-content", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_9454e5c339d1838425daf0a7e41cb849}>
+  <Fragment_1951457ffdfa9972621b7e3900e6ed90/>
+</RadixThemesButton>
+  )
+}
+
+export function Fragment_1951457ffdfa9972621b7e3900e6ed90 () {
+  const state__state_components = useContext(StateContexts.state__state_components)
+
+
+  return (
+    <Fragment>
+  {isTrue(state__state_components.extend_sidebar) ? (
+  <Fragment>
+  <LucideArrowLeftToLineIcon css={{"color": "var(--current-color)", "width": "3em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
+</Fragment>
+) : (
+  <Fragment>
+  <LucideArrowRightToLineIcon css={{"color": "var(--current-color)", "width": "3em", "heihgt": "auto", "strokeWidth": "2.5"}}/>
+</Fragment>
+)}
+</Fragment>
+  )
+}
+
+export function Link_529fceb6f16c5fe6bdad4a56826e1f34 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/yt_download`} passHref={true}>
+  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Grid_1aa9f988e1db58c60f319874e355a86b () {
+  const state__state_components = useContext(StateContexts.state__state_components)
+
+
+  return (
+    <RadixThemesGrid css={{"gridTemplateColumns": state__state_components.grid_sidebar, "width": "100%", "height": "100%"}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center"}} direction={`column`} gap={`2`}>
+  <Fragment_134907248acd534d21a8514f973d9e83/>
+</RadixThemesFlex>
+  <RadixThemesFlex align={`start`} css={{"backgroundColor": "#c8d7fd", "width": "100%", "alignItems": "center"}} direction={`column`} gap={`0`}>
+  <Box sx={{"width": "100%", "display": ["block", "none", "none", "none"]}}>
+  <RadixThemesFlex align={`start`} css={{"align": "center", "height": "100%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "width": "100%", "backgroundColor": "#373de1", "zIndex": "5", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <Link_946febab9167efbee47da7ba55649224/>
+  <Box sx={{"heihgt": "100%", "gap": "2.5em", "display": ["block", "none", "none", "none"]}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "max-content", "height": "100%", "paddingInlineStart": "0.4em", "paddingInlineEnd": "0.4em"}} direction={`row`} gap={`3`}>
+  <Link_529fceb6f16c5fe6bdad4a56826e1f34/>
+  <Link_09572dd4d4b0b33b82cd83d486d68d63/>
+  <Link_95505b8b354dbb4e47797d91af82bc0e/>
+  <Link_e23961e25729849a0585ab2c0c5ff7f8/>
+</RadixThemesFlex>
+</Box>
+  <Box sx={{"height": "100%", "gap": "1.5em", "display": ["none", "block", "block", "block"]}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "max-content", "height": "100%", "paddingInlineStart": "0.4em", "paddingInlineEnd": "0.4em"}} direction={`column`} gap={`3`}>
+  <Link_529fceb6f16c5fe6bdad4a56826e1f34/>
+  <Link_09572dd4d4b0b33b82cd83d486d68d63/>
+  <Link_95505b8b354dbb4e47797d91af82bc0e/>
+  <Link_e23961e25729849a0585ab2c0c5ff7f8/>
+</RadixThemesFlex>
+</Box>
+</RadixThemesFlex>
+</Box>
+  <Fragment>
+  <Box sx={{"width": "100%", "heihgt": "100%", "display": ["none", "block", "block", "block"]}}>
+  <RadixThemesFlex align={`start`} css={{"textAlign": "center", "width": "100%", "backgroundColor": "#6474f0", "marginBottom": "1em", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <Button_ef1f5be29ad91e4fe886874f258cfc5d/>
+  <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
+  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "marginLeft": "2em", "textAlign": "center"}}>
+  {`Web Music`}
+</RadixThemesHeading>
+  <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
+  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "textAlign": "center"}}>
+  {`Nicolás NA`}
+</RadixThemesHeading>
+</RadixThemesFlex>
+</Box>
+  <Box sx={{"width": "100%", "heihgt": "100%", "display": ["block", "none", "none", "none"]}}>
+  <RadixThemesFlex align={`start`} css={{"textAlign": "center", "width": "100%", "backgroundColor": "#6474f0", "marginBottom": "1em", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "textAlign": "center"}}>
+  {`Web Music`}
+</RadixThemesHeading>
+  <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
+  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "textAlign": "center"}}>
+  {`Nicolás NA`}
+</RadixThemesHeading>
+</RadixThemesFlex>
+</Box>
+</Fragment>
+  <img css={{"width": "100%", "maxWidth": "5.5em", "height": "auto"}} src={`/auriculares.ico`}/>
+  <RadixThemesHeading css={{"paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "marginBottom": "1em", "fontSize": "200%", "color": "#1b1c4b", "textShadow": "4px 4px 4px #8298f7", "textAlign": "center"}}>
+  {`Busca y descarga la música que te gusta`}
+</RadixThemesHeading>
+  <RadixThemesText as={`p`} css={{"fontSize": "120%", "textAlign": "center", "marginBottom": "1em", "color": "#1b1c4b"}}>
+  {`Busqueda por canciones individuales:`}
+</RadixThemesText>
+  <RadixThemesFlex align={`center`} css={{"width": "max-content", "heigth": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
+  <NextLink href={`/yt_download`} passHref={true}>
+  <img css={{"width": "6em", "height": "auto"}} src={`/youtube_icon.png`}/>
+</NextLink>
+</RadixThemesLink>
+  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
+  <NextLink href={`/spotify_download`} passHref={true}>
+  <img css={{"width": "6em", "height": "auto"}} src={`/spotify_icon.png`}/>
+</NextLink>
+</RadixThemesLink>
+</RadixThemesFlex>
+  <RadixThemesText as={`p`} css={{"fontSize": "120%", "textAlign": "center", "marginBottom": "1em", "marginTop": "2em", "color": "#1b1c4b"}}>
+  {`Busqueda por playlist:`}
+</RadixThemesText>
+  <RadixThemesFlex align={`center`} css={{"width": "max-content", "heigth": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
+  <NextLink href={`/yt_playlist`} passHref={true}>
+  <img css={{"width": "6em", "height": "auto"}} src={`/youtube_icon.png`}/>
+</NextLink>
+</RadixThemesLink>
+  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
+  <NextLink href={`/spotify_playlist`} passHref={true}>
+  <img css={{"width": "6em", "height": "auto"}} src={`/spotify_icon.png`}/>
+</NextLink>
+</RadixThemesLink>
+</RadixThemesFlex>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "max-content", "backgroundColor": "#6474f0", "paddingTop": "1.5em", "paddingBottom": "0.4em", "marginTop": "5em", "alignItems": "center"}} direction={`column`} gap={`0`}>
+  <RadixThemesAvatar css={{"width": "3em", "height": "3em", "border": "3px solid #8298f7", "padding": "0.2em", "background": "#c8d7fd"}} src={`/auriculares.ico`}/>
+  <RadixThemesText align={`center`} as={`p`} css={{"marginTop": "0.6em", "color": "#eef4ff", "fontSize": "80%"}}>
+  {`Esta página ha sido desarrollada por fines educativos.`}
+</RadixThemesText>
+  <RadixThemesText align={`center`} as={`p`} css={{"color": "#eef4ff", "fontSize": "80%"}}>
+  {`Nicolás Norambena Alarcón. 2024`}
+</RadixThemesText>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesGrid>
+  )
+}
+
+export function Link_946febab9167efbee47da7ba55649224 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "max-content", "heihgt": "100%", "marginInlineStart": "0.5em", "marginInlineEnd": "0.5em"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/`} passHref={true}>
+  <RadixThemesFlex align={`start`} css={{"marginBottom": "0.5em", "alignItems": "center"}} direction={`column`} gap={`2`}>
+  <RadixThemesAvatar css={{"width": "2.5em", "height": "auto"}} src={`/auriculares.ico`}/>
+</RadixThemesFlex>
+  <Box sx={{"marginTop": "2em", "marginBottom": "2em", "display": ["none", "block", "block", "block"]}}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_95505b8b354dbb4e47797d91af82bc0e () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
+  <NextLink href={`/yt_playlist`} passHref={true}>
+  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
+  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
   )
 }
 
@@ -330,46 +423,6 @@ export function Fragment_7b7eebc699f74cbb20d10bd8f81ec7ae () {
   )
 }
 
-export function Link_09572dd4d4b0b33b82cd83d486d68d63 () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/spotify_download`} passHref={true}>
-  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/spotify_icon.png`}/>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Link_95505b8b354dbb4e47797d91af82bc0e () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/yt_playlist`} passHref={true}>
-  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  )
-}
-
-export function Button_ef1f5be29ad91e4fe886874f258cfc5d () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-  const on_click_9454e5c339d1838425daf0a7e41cb849 = useCallback((_e) => addEvents([Event("state.state_components.change_sidebar", {})], (_e), {}), [addEvents, Event])
-
-  return (
-    <RadixThemesButton css={{"backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "padding": "0.4em", "width": "max-content", "heihgt": "max-content", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}} onClick={on_click_9454e5c339d1838425daf0a7e41cb849}>
-  <Fragment_1951457ffdfa9972621b7e3900e6ed90/>
-</RadixThemesButton>
-  )
-}
-
 const pulse = keyframes`
     0% {
         opacity: 0;
@@ -379,20 +432,6 @@ const pulse = keyframes`
     }
 `
 
-
-export function Link_529fceb6f16c5fe6bdad4a56826e1f34 () {
-
-
-  return (
-    <RadixThemesLink asChild={true} css={{"width": "max-content"}} target={isTrue(false) ? `_blank` : ``}>
-  <NextLink href={`/yt_download`} passHref={true}>
-  <RadixThemesButton css={{"width": "max-content", "height": "100%", "borderRadius": "0.7em", "fontSize": "80%", "paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "backgroundColor": "#373de1", "border": "1px solid #c8d7fd", "color": "#eef4ff", "backgroundImage": "linear-gradient(#6474f0, #373de1)", "&:hover": {"backgroundImage": "linear-gradient(#373de1, #393bc9)"}}}>
-  <img css={{"width": "2.5em", "height": "auto"}} src={`/youtube_icon.png`}/>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  )
-}
 
 export default function Component() {
 
@@ -406,7 +445,7 @@ export default function Component() {
 </Fragment>
   <RadixThemesBox>
   <Box sx={{"display": ["none", "block", "block", "block"]}}>
-  <Grid_6487a1514008bdea4ec89a8931239764/>
+  <Grid_1aa9f988e1db58c60f319874e355a86b/>
 </Box>
   <Box sx={{"display": ["block", "none", "none", "none"]}}>
   <RadixThemesFlex align={`start`} css={{"backgroundColor": "#c8d7fd", "width": "100%", "alignItems": "center"}} direction={`column`} gap={`0`}>
@@ -417,20 +456,22 @@ export default function Component() {
   <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "max-content", "height": "100%", "paddingInlineStart": "0.4em", "paddingInlineEnd": "0.4em"}} direction={`row`} gap={`3`}>
   <Link_529fceb6f16c5fe6bdad4a56826e1f34/>
   <Link_09572dd4d4b0b33b82cd83d486d68d63/>
-  <Link_f13bf4124820068967bcf93ddf2abe60/>
   <Link_95505b8b354dbb4e47797d91af82bc0e/>
+  <Link_e23961e25729849a0585ab2c0c5ff7f8/>
 </RadixThemesFlex>
 </Box>
   <Box sx={{"height": "100%", "gap": "1.5em", "display": ["none", "block", "block", "block"]}}>
   <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "max-content", "height": "100%", "paddingInlineStart": "0.4em", "paddingInlineEnd": "0.4em"}} direction={`column`} gap={`3`}>
   <Link_529fceb6f16c5fe6bdad4a56826e1f34/>
   <Link_09572dd4d4b0b33b82cd83d486d68d63/>
-  <Link_f13bf4124820068967bcf93ddf2abe60/>
   <Link_95505b8b354dbb4e47797d91af82bc0e/>
+  <Link_e23961e25729849a0585ab2c0c5ff7f8/>
 </RadixThemesFlex>
 </Box>
 </RadixThemesFlex>
 </Box>
+  <Fragment>
+  <Box sx={{"width": "100%", "heihgt": "100%", "display": ["none", "block", "block", "block"]}}>
   <RadixThemesFlex align={`start`} css={{"textAlign": "center", "width": "100%", "backgroundColor": "#6474f0", "marginBottom": "1em", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "alignItems": "center"}} direction={`row`} gap={`2`}>
   <Button_ef1f5be29ad91e4fe886874f258cfc5d/>
   <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
@@ -442,12 +483,25 @@ export default function Component() {
   {`Nicolás NA`}
 </RadixThemesHeading>
 </RadixThemesFlex>
+</Box>
+  <Box sx={{"width": "100%", "heihgt": "100%", "display": ["block", "none", "none", "none"]}}>
+  <RadixThemesFlex align={`start`} css={{"textAlign": "center", "width": "100%", "backgroundColor": "#6474f0", "marginBottom": "1em", "paddingInlineStart": "0.7em", "paddingInlineEnd": "0.7em", "paddingTop": "0.7em", "paddingBottom": "0.7em", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "textAlign": "center"}}>
+  {`Web Music`}
+</RadixThemesHeading>
+  <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
+  <RadixThemesHeading css={{"fontSize": "150%", "color": "#eef4ff", "textShadow": "4px 4px 4px black", "textAlign": "center"}}>
+  {`Nicolás NA`}
+</RadixThemesHeading>
+</RadixThemesFlex>
+</Box>
+</Fragment>
   <img css={{"width": "100%", "maxWidth": "5.5em", "height": "auto"}} src={`/auriculares.ico`}/>
   <RadixThemesHeading css={{"paddingTop": "0.4em", "paddingBottom": "0.4em", "paddingInlineStart": "1em", "paddingInlineEnd": "1em", "marginBottom": "1em", "fontSize": "200%", "color": "#1b1c4b", "textShadow": "4px 4px 4px #8298f7", "textAlign": "center"}}>
-  {`Descarga y obtén información de la música que te gusta`}
+  {`Busca y descarga la música que te gusta`}
 </RadixThemesHeading>
   <RadixThemesText as={`p`} css={{"fontSize": "120%", "textAlign": "center", "marginBottom": "1em", "color": "#1b1c4b"}}>
-  {`Fuentes de música soportados:`}
+  {`Busqueda por canciones individuales:`}
 </RadixThemesText>
   <RadixThemesFlex align={`center`} css={{"width": "max-content", "heigth": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
   <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
@@ -461,7 +515,21 @@ export default function Component() {
 </NextLink>
 </RadixThemesLink>
 </RadixThemesFlex>
-  <RadixThemesBox css={{"height": "15vh"}}/>
+  <RadixThemesText as={`p`} css={{"fontSize": "120%", "textAlign": "center", "marginBottom": "1em", "marginTop": "2em", "color": "#1b1c4b"}}>
+  {`Busqueda por playlist:`}
+</RadixThemesText>
+  <RadixThemesFlex align={`center`} css={{"width": "max-content", "heigth": "100%", "alignItems": "center"}} direction={`row`} gap={`2`}>
+  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
+  <NextLink href={`/yt_playlist`} passHref={true}>
+  <img css={{"width": "6em", "height": "auto"}} src={`/youtube_icon.png`}/>
+</NextLink>
+</RadixThemesLink>
+  <RadixThemesLink asChild={true} css={{"isExternal": false, "width": "max-content", "height": "max-content", "border": "2px solid #373de1", "borderRadius": "1em", "background": "#eef4ff", "padding": "0.5em", "&:hover": {"background": "#393bc9"}}}>
+  <NextLink href={`/spotify_playlist`} passHref={true}>
+  <img css={{"width": "6em", "height": "auto"}} src={`/spotify_icon.png`}/>
+</NextLink>
+</RadixThemesLink>
+</RadixThemesFlex>
   <RadixThemesFlex align={`start`} css={{"width": "100%", "height": "max-content", "backgroundColor": "#6474f0", "paddingTop": "1.5em", "paddingBottom": "0.4em", "marginTop": "5em", "alignItems": "center"}} direction={`column`} gap={`0`}>
   <RadixThemesAvatar css={{"width": "3em", "height": "3em", "border": "3px solid #8298f7", "padding": "0.2em", "background": "#c8d7fd"}} src={`/auriculares.ico`}/>
   <RadixThemesText align={`center`} as={`p`} css={{"marginTop": "0.6em", "color": "#eef4ff", "fontSize": "80%"}}>

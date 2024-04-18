@@ -3,7 +3,7 @@
 Página Web para descargar canciones de YouTube y Spotify en MP3.
 
 <img src ="images/ejemplo yt.png" width="500"> 
-<img src ="images/ejemplo mobile.png" width="150">
+<img src ="images/ejemplo mobile.png" width="300">
 
 # Características
 

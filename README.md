@@ -1,9 +1,16 @@
 # WebMusic 
 
+<p align="center">
 Página Web para descargar canciones de YouTube y Spotify en MP3.
+</p>
 
-<img src ="images/ejemplo yt.png" width="500"> 
-<img src ="images/ejemplo mobile.png" width="300">
+<p align="center">
+<img src ="images/ejemplo yt.png"> 
+</p>
+<p align="center">
+<img src ="images/ejemplo mobile.png" width="400">
+</p>
+
 
 # Características
 
